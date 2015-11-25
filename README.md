@@ -62,10 +62,10 @@ $ cd fundamentals
 $ source bin/activate
 ```
 
-Now this is a completely clean environment, there are no python packages installed, we need to set those up. There are two ways to do this, first is by running the following pip install commands, the other is by installing from the requirements file included in the this repository. I recommend the requirements file as it contains current version information.
+Now this is a completely clean environment, there are no python packages installed, we need to set those up. There are two ways to do this, first is by running the following pip install commands, the other is by installing from the requirements file included in the this repository. I recommend the requirements file as it contains current version information. The file can be downloaded [here](https://raw.githubusercontent.com/griffinfoster/fundamentals_of_interferometry/master/requirements.txt).
 
 ```
-$ pip install -r [path to this repository]/requirements.txt
+$ pip install -r [path to file]/requirements.txt
 ```
 
 or
