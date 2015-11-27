@@ -4,7 +4,7 @@ An ipython notebook-based book on the fundamentals of radio interferometry
 
 ## Setup contributor virtualenv
 
-If you would like to contribute to notebooks it is useful to setup a python virtual environment to ensure your environment is consistent with other contributors. This section provides a guide for how to do this in an Ubuntu system, other systems should work with slight modifications.
+If you would like to contribute to notebooks it is useful to setup a python virtual environment to ensure your environment is consistent with other contributors. This section provides a guide for how to do this in an Ubuntu system (tested on 14.04), other systems should work with slight modifications.
 
 Currently we are using pip to install packages, the most important package versions are:
 
@@ -22,6 +22,11 @@ This guide was developed from these references:
 * <http://jonathanchu.is/posts/virtualenv-and-pip-basics/>
 * <https://warpedtimes.wordpress.com/2012/09/23/a-tutorial-on-virtualenv-to-isolate-python-installations/>
 
+Before setting up a virtual environment there are a few system level libraries which need to be installed
+
+```
+sudo apt-get install libpng-dev libncurses5-dev
+```
 
 To setup a clean environment to run our ipython-notebook standard system, start by making sure virtualenv is installed on your system. Run:
 
@@ -98,4 +103,12 @@ In the future, when you wish to return to the virtualenv, change to the fundamen
 
 ```
 $ source bin/activate
+```
+
+### Ubuntu 12.04 Issues
+
+The system setuptools/distribute (0.6.24) is not new enough and needs to be updated with easy_install
+
+```
+easy_install -U distribute
 ```
