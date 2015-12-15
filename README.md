@@ -2,6 +2,8 @@
 
 An ipython notebook-based book on the fundamentals of radio interferometry
 
+If you want to contribute, fork the repository, make changes, and when you are ready, submit a pull request.
+
 ## Setup contributor virtualenv
 
 If you would like to contribute to notebooks it is useful to setup a python virtual environment to ensure your environment is consistent with other contributors. This section provides a guide for how to do this in an Ubuntu system (tested on 14.04), other systems should work with slight modifications.
@@ -67,7 +69,19 @@ $ cd fundamentals
 $ source bin/activate
 ```
 
-Now this is a completely clean environment, there are no python packages installed, we need to set those up. There are two ways to do this, first is by running the following pip install commands, the other is by installing from the requirements file included in the this repository. I recommend the requirements file as it contains current version information. The file can be downloaded [here](https://raw.githubusercontent.com/griffinfoster/fundamentals_of_interferometry/master/requirements.txt). This will take a bit of time to setup, I recommend a tea break.
+First, lets clone the repository from github, you should use your own forked version if you want to make changes
+
+```
+$ git clone https://github.com/[username]/fundamentals_of_interferometry.git
+```
+
+If you just want to run the notebooks interactively you can just use this repository.
+
+```
+$ git clone https://github.com/griffinfoster/fundamentals_of_interferometry.git
+```
+
+Now this is a completely clean environment, there are no python packages installed, we need to set those up. There are two ways to do this, first is by running the following pip install commands, the other is by installing from the requirements file included in the this repository. I recommend the requirements file as it contains current version information. The file is in the main directory of the repository or can be downloaded [here](https://raw.githubusercontent.com/griffinfoster/fundamentals_of_interferometry/master/requirements.txt). This will take a bit of time to setup, I recommend a tea break.
 
 ```
 $ pip install --upgrade pip
@@ -85,10 +99,9 @@ $ pip install scipy
 $ pip install ipython[all]
 ```
 
-We are now ready to check out the notebook repository and start the ipython notebook server:
+We are now ready to start the ipython notebook server:
 
 ```
-$ git clone https://github.com/griffinfoster/fundamentals_of_interferometry.git
 $ cd fundamentals_of_interferometry
 $ ipython notebook
 ```
