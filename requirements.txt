@@ -1,5 +1,7 @@
 alabaster==0.7.6
+APLpy==1.0
 appnope==0.1.0
+astropy==1.1.1
 Babel==2.1.1
 backports-abc==0.4
 backports.ssl-match-hostname==3.4.0.2
