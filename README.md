@@ -16,6 +16,8 @@ Currently we are using pip to install packages, the most important package versi
 * matplotlib 1.5.0
 * scipy 0.16.1
 * ipython 4.0.0
+* astropy 1.1.1
+* aplpy 1.0
 
 This guide was developed from these references:
 
@@ -97,6 +99,8 @@ $ pip install numpy
 $ pip install matplotlib
 $ pip install scipy
 $ pip install ipython[all]
+$ pip install --no-deps astropy
+$ pip install aplpy
 ```
 
 We are now ready to start the ipython notebook server:
