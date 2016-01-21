@@ -2,8 +2,8 @@
 
 p.prerequisites {
     border:5px;
-    border-style:double;
-    background-color:#FFFFFF;
+    border-style:none;
+    background-color:#F0F0F0;
     box-shadow: 5px 5px 2px #888888;
     border-color:#FF0000;
     padding: 1em;
