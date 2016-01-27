@@ -1,10 +1,9 @@
-from IPython.display import Image
 from IPython.core.display import HTML
 def css_styling():
-    styles = open("./styles/custom.css", "r").read()
+    styles = open("../style/course.css", "r").read()
+    print "CSS Config loaded"
     return HTML(styles)
 
-print "Config loaded"
 #css_styling()
 
 # CSS styling: 
