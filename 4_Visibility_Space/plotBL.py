@@ -1,6 +1,10 @@
 import matplotlib.pyplot as plt
 from matplotlib.patches import Ellipse
 import numpy as np
+
+
+# For 4.4.1 UV Coverage UV tracks python notebook
+
 def sphere(ant1,ant2,A,E,D,L):
     # Create a sphere
     r = 6371 #km
@@ -127,3 +131,77 @@ def UVellipse(u,v,w,a,b,v0):
     ax.plot(-u,-v,"r")
     ax.hold('on')
 
+# FOR 4.4.2 UV Coverage Improving your coverage python notebook
+
+def baseline_to_xyz(lengthbaseline, elevation, azimuth, latitude):
+    
+    x = np.cos(latitude)*np.sin(elevation) - np.sin(latitude)*np.cos(elevation)*np.cos(azimuth)
+    
+    y = np.cos(elevation)*np.sin(azimuth)
+    
+    z = np.sin(latitude)*np.sin(elevation) + np.cos(latitude)*np.cos(elevation)*np.cos(azimuth)
+    
+    xyz = np.array([(x,y,z)])
+    
+    return lengthbaseline * xyz.T
+
+def xyz_to_baseline(ha, dec):
+    
+    a1 = np.sin(ha)
+    a2 = np.cos(ha)
+    a3 = 0.
+    
+    b1 = -1*np.sin(dec)*np.cos(ha)
+    b2 = np.sin(dec)*np.sin(ha)
+    b3 = np.cos(dec)
+    
+    c1 = np.cos(dec)*np.cos(ha)
+    c2 = -1*np.cos(dec)*np.sin(ha)
+    c3 = np.sin(dec)
+    
+    return np.array([(a1,a2,a3),(b1,b2,b3),(c1,c2,c3)])
+
+def track_uv(listha, lengthbaseline, elevation, azimuth, latitude, dec, ntimeslots):
+    
+    UVW = np.zeros((ntimeslots, 3), dtype=float)
+    for i in range(ntimeslots):
+        UVW[i, :] = np.dot(xyz_to_baseline(listha[i], dec),baseline_to_xyz(lengthbaseline, azimuth, elevation, latitude)).T    
+    return UVW 
+
+def baseline_angles(antennaPosition,lamb):
+
+    #number of antennas
+    na = len(antennaPosition)
+    #number of independent baselines
+    nbl = na*(na-1)/2
+    length_angle = np.zeros((nbl, 2))
+    k = 0
+    for i in range(na):
+        for j in range(i+1, na):
+            length_angle[k,0] = lamb**(-1)*np.sqrt((antennaPosition[i,0]-antennaPosition[j,0])**2 + (antennaPosition[i,1]-antennaPosition[j,1])**2)
+            length_angle[k,1] = np.arctan2((antennaPosition[i,1]-antennaPosition[j,1]) , (antennaPosition[i,0]-antennaPosition[j,0]))
+            k = k +1
+    return length_angle
+
+
+def plotuv(antennaPosition,L,dec,h,Ntimes,lamb):
+    B = baseline_angles(antennaPosition,lamb)
+#number of antennas
+
+    na = len(antennaPosition)
+#number pair or baseline
+    nbl = na*(na-1)/2
+    maxuv=0.
+    for i in range (nbl):
+        uv = track_uv(h, B[i, 0], 0., B[i, 1], L, dec, Ntimes)/1e3;
+        if uv.max() > maxuv : maxuv=uv.max()
+        plt.plot(uv[:,0], uv[:,1], 'b.',ms=1,alpha=0.5)
+        plt.plot(-uv[:,0], -uv[:,1], 'r.',ms=1,alpha=0.5)
+    plt.xlabel('u (klambda)')
+    plt.ylabel('v (klambda)')
+    plt.title('uv coverage')
+    mb = maxuv*1.1 #5*np.sqrt((uv**2).sum(1)).max()
+    uv.shape
+    plt.axes().set_aspect('equal')
+    plt.xlim(-mb,mb)
+    plt.ylim(-mb,mb)
