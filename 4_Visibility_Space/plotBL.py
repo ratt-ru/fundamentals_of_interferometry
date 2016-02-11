@@ -168,6 +168,17 @@ def track_uv(listha, lengthbaseline, elevation, azimuth, latitude, dec, ntimeslo
         UVW[i, :] = np.dot(xyz_to_baseline(listha[i], dec),baseline_to_xyz(lengthbaseline, azimuth, elevation, latitude)).T    
     return UVW 
 
+def track_uv_freq(ha, listfreq,lengthbaseline, elevation, azimuth, latitude, dec, nfreqs):
+    c=3e8
+    UVW = np.zeros((nfreqs, 3), dtype=float)
+    listlamb=c/listfreq
+    for i in range(nfreqs):
+	#print lengthbaseline.shape
+        #print "coucou"
+        #print lengthbaseline*listlamb[0]/listlamb[i]
+        UVW[i, :] = np.dot(xyz_to_baseline(ha[0], dec),baseline_to_xyz(lengthbaseline*listlamb[0]/listlamb[i], azimuth, elevation, latitude)).T    
+    return UVW 
+
 def baseline_angles(antennaPosition,lamb):
 
     #number of antennas
@@ -184,16 +195,45 @@ def baseline_angles(antennaPosition,lamb):
     return length_angle
 
 
-def plotuv(antennaPosition,L,dec,h,Ntimes,lamb):
-    B = baseline_angles(antennaPosition,lamb)
-#number of antennas
+def plotuv_freq(antennaPosition,L,dec,h,Nfreqs,lamb0,df):
+    c=3e8
+    #print "lamb0="+str(lamb0)
+    tabfreq=c/(lamb0)+np.arange(Nfreqs)*df
 
+    B = baseline_angles(antennaPosition,lamb0)
+#    print B.shape
+#number of antennas
+    
     na = len(antennaPosition)
 #number pair or baseline
     nbl = na*(na-1)/2
     maxuv=0.
     for i in range (nbl):
-        uv = track_uv(h, B[i, 0], 0., B[i, 1], L, dec, Ntimes)/1e3;
+        uv = track_uv_freq(h, tabfreq,B[i, 0], 0., B[i, 1], L, dec, Nfreqs)/1e3;
+     #   if i == 0 : print uv
+        if uv.max() > maxuv : maxuv=uv.max()
+        plt.plot(uv[:,0], uv[:,1], 'b.',ms=1,alpha=0.5)
+        plt.plot(-uv[:,0], -uv[:,1], 'r.',ms=1,alpha=0.5)
+    plt.xlabel('u (klambda)')
+    plt.ylabel('v (klambda)')
+    plt.title('uv coverage')
+    mb = maxuv*1.1 #5*np.sqrt((uv**2).sum(1)).max()
+    uv.shape
+    plt.axes().set_aspect('equal')
+    plt.xlim(-mb,mb)
+    plt.ylim(-mb,mb)
+
+
+def plotuv(antennaPosition,L,dec,h,Ntimes,lamb):
+    B = baseline_angles(antennaPosition,lamb)
+#number of antennas
+    
+    na = len(antennaPosition)
+#number pair or baseline
+    nbl = na*(na-1)/2
+    maxuv=0.
+    for i in range (nbl):
+        uv = track_uv(h,B[i, 0], 0., B[i, 1], L, dec, Ntimes)/1e3;
         if uv.max() > maxuv : maxuv=uv.max()
         plt.plot(uv[:,0], uv[:,1], 'b.',ms=1,alpha=0.5)
         plt.plot(-uv[:,0], -uv[:,1], 'r.',ms=1,alpha=0.5)
