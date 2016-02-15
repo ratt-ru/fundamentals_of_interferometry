@@ -1,0 +1,72 @@
+@ARTICLE{1973ApJ...184..605V,
+   author = {{Vernazza}, J.~E. and {Avrett}, E.~H. and {Loeser}, R.},
+    title = "{Structure of the Solar Chromosphere. Basic Computations and Summary of the Results}",
+  journal = {\apj},
+     year = 1973,
+    month = sep,
+   volume = 184,
+    pages = {605-632},
+      doi = {10.1086/152353},
+   adsurl = {http://adsabs.harvard.edu/abs/1973ApJ...184..605V},
+  adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+}
+@misc{ wiki:euler,
+   author = "Wikipedia",
+   title = "Leonhard Euler --- Wikipedia{,} The Free Encyclopedia",
+   year = "2016",
+   url = "\url{https://en.wikipedia.org/w/index.php?title=Leonhard_Euler&oldid=700779601}",
+   note = "[Online; accessed 21-January-2016]"
+ }
+@misc{wiki:eulersformula,
+   author = "Wikipedia",
+   title = "Euler's formula --- Wikipedia{,} The Free Encyclopedia",
+   year = "2015",
+   url = "\url{http://en.wikipedia.org/w/index.php?title=Euler%27s_formula&oldid=654844541}",
+   note = "[Online; accessed 17-April-2015]"
+ }
+@misc{ wiki:taylorseries,
+   author = "Wikipedia",
+   title = "Taylor series --- Wikipedia{,} The Free Encyclopedia",
+   year = "2015",
+   url = "\url{https://en.wikipedia.org/w/index.php?title=Taylor_series&oldid=697423086}",
+   note = "[Online; accessed 21-January-2016]"
+ }
+@PROCEEDINGS{1999ASPC..180.....T,
+    title = "{Synthesis Imaging in Radio Astronomy II}",
+booktitle = {Synthesis Imaging in Radio Astronomy II},
+     year = 1999,
+   series = {Astronomical Society of the Pacific Conference Series},
+   volume = 180,
+   editor = {{Taylor}, G.~B. and {Carilli}, C.~L. and {Perley}, R.~A.},
+   adsurl = {http://adsabs.harvard.edu/abs/1999ASPC..180.....T},
+  adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+}
+@misc{ wiki:trigonometric_functions,
+   author = "Wikipedia",
+   title = "Trigonometric functions --- Wikipedia{,} The Free Encyclopedia",
+   year = "2016",
+   url = "\url{https://en.wikipedia.org/w/index.php?title=Trigonometric_functions&oldid=699701085}",
+   note = "[Online; accessed 22-January-2016]"
+ }
+@misc{ wiki:exponential_function,
+   author = "Wikipedia",
+   title = "Exponential function --- Wikipedia{,} The Free Encyclopedia",
+   year = "2016",
+   url = "\url{https://en.wikipedia.org/w/index.php?title=Exponential_function&oldid=699862556}",
+   note = "[Online; accessed 22-January-2016]"
+ }
+@misc{ wiki:paul_dirac,
+   author = "Wikipedia",
+   title = "Paul Dirac --- Wikipedia{,} The Free Encyclopedia",
+   year = "2016",
+   url = "\url{https://en.wikipedia.org/w/index.php?title=Paul_Dirac&oldid=701174644}",
+   note = "[Online; accessed 25-January-2016]"
+ }
+
+@misc{ wiki:oliver_heaviside,
+   author = "Wikipedia",
+   title = "Oliver Heaviside --- Wikipedia{,} The Free Encyclopedia",
+   year = "2016",
+   url = "\url{https://en.wikipedia.org/w/index.php?title=Oliver_Heaviside&oldid=700585621}",
+   note = "[Online; accessed 26-January-2016]"
+ }
