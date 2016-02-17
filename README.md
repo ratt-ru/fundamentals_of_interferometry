@@ -4,6 +4,17 @@ An ipython notebook-based book on the fundamentals of radio interferometry
 
 If you want to contribute, fork the repository, make changes, and when you are ready, submit a pull request.
 
+## Data Files
+
+There are additional large files (> 1MB) which are needed for some of the sections, these can be downloaded [here](https://www.dropbox.com/s/n3jyiajytwuldpu/fundamentals_fits.tar.gz?dl=0), the original simulated measurement sets can be downloaded [here](https://www.dropbox.com/s/kb3p2mthei8dgl9/simulated_KAT-7_ms.tar.gz?dl=0). These are tarballs which should be extracted in the data directory.
+
+```
+cd fundamentals_of_interferometry/data/
+tar xvzf fundamentals_fits.tar.gz
+cd simulated_kat_7_vis
+tar xvzf simulated_KAT-7_ms.tar.gz
+```
+
 ## Setup contributor virtualenv
 
 If you would like to contribute to notebooks it is useful to setup a python virtual environment to ensure your environment is consistent with other contributors. This section provides a guide for how to do this in an Ubuntu system (tested on 14.04), other systems should work with slight modifications.
