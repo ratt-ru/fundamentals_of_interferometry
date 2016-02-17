@@ -35,7 +35,7 @@ if __name__ == '__main__':
     freqs = ms.getcol('CHAN_FREQ')[0]
     ms.close()
 
-    fig = plt.figure( figsize=(8,8) )
+    fig = plt.figure( figsize=(8.5,8) ) #(width, height)
 
     if opts.uvdist:
         if opts.freqs:
@@ -79,6 +79,7 @@ if __name__ == '__main__':
             plt.ylim(-1.*limit, limit)
 
         ax = plt.gca()
+        ax.set_aspect('equal')
         plt.grid(True)
         plt.title('uv Coverage')
 
