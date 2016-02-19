@@ -1,0 +1,6 @@
+plotUVcoverage.py:
+    requires pyrap, can also use python-casacore with a slight modification
+
+wsclean:
+    images generated with version WSClean version 1.9 (2015-08-21)
+
