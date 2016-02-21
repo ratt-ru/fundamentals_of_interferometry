@@ -7,7 +7,7 @@ p.prerequisites {
     box-shadow: 5px 5px 2px #888888;
     border-color:#FF0000;
     padding: 1em;
-}
+    }
 
 p.conclusion {
     border:5px;
@@ -16,7 +16,7 @@ p.conclusion {
     box-shadow: 5px 5px 2px #888888;
     border-color:#c8ebca;
     padding: 1em;
-}
+    }
 
 div.warn {    
     background-color: #fcf2f2;
@@ -31,6 +31,6 @@ div.advice {
     border-left: 5px solid #a2dda5;
     padding: 0.5em;
     }
- </style>
 
+</style>
 
