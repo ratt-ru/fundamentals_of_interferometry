@@ -1,0 +1,21 @@
+2016-01-12 09:57:18	INFO	casa::::casa	---
+2016-01-12 09:57:18	INFO	casa::::casa	CASA Version 4.2.2 (prerelease r30986)
+2016-01-12 09:57:18	INFO	casa::::casa	  Tagged on: Thu, 21 Aug 2014
+2016-01-12 09:57:18	INFO	NewMSSimulator::initAnt() 	Using global coordinates for the antennas
+2016-01-12 09:57:18	INFO	NewMSSimulator::initAnt() 	Added rows to ANTENNA table
+2016-01-12 09:57:18	INFO	MSsimulator::initSpWindows() 	Creating new spectral window 00, ID 1
+2016-01-12 09:57:18	INFO	MSsimulator::initFeeds() 	Added rows to FEED table
+2016-01-12 09:57:18	INFO	simulator::settimes()	Times 
+2016-01-12 09:57:18	INFO	simulator::settimes()+	     Integration time 60s
+2016-01-12 09:57:18	SEVERE	MeasTable::dUTC(Double) (file /var/rpmbuild/BUILD/casapy422/casapy422-42.2.30986/casacore/measures/Measures/MeasTable.cc, line 6657)	Leap second table TAI_UTC seems out-of-date. 
+2016-01-12 09:57:18	SEVERE	MeasTable::dUTC(Double) (file /var/rpmbuild/BUILD/casapy422/casapy422-42.2.30986/casacore/measures/Measures/MeasTable.cc, line 6657)+	Until table is updated (see system/CASA manager), times and coordinates
+2016-01-12 09:57:18	SEVERE	MeasTable::dUTC(Double) (file /var/rpmbuild/BUILD/casapy422/casapy422-42.2.30986/casacore/measures/Measures/MeasTable.cc, line 6657)+	derived from UTC could be wrong by 1s or more.
+2016-01-12 09:57:18	INFO	NewMSSimulator::observe()	First source: 00 @ 00:00:00.00   -30.00.00.00       J2000
+2016-01-12 09:57:18	INFO	NewMSSimulator::observe()+	Full time range: 01-Jan-2015/00:00:35.0 -- 01-Jan-2015/06:00:35.0 TAI with int = 60
+2016-01-12 09:57:18	INFO	NewMSSimulator::observe()	Calculating a total of 360 integrations
+2016-01-12 09:57:19	INFO	Simulator::reset() 	Resetting all visibility corruption components
+2016-01-12 09:57:19	INFO	Simulator::reset() 	Reset all image-plane corruption components
+
+ 2016/1/12  11:57:19 ::: casapy --nologger --log2term --logfile log-simms.txt -c /tmp/tmpXUswdt.py
+/home/makhathini/build/simms/simms/bin/simms -T kat-7 -n kat-7_6h10s_500MHz50MHz.MS -st 6 -dt 60 -df 10MHz -nc 10 -f0 1440MHz observatories/KAT7_ANTENNAS
+Parameters: msname="kat-7_6h10s_500MHz50MHz.MS", label="None", tel="kat-7", pos="observatories/KAT7_ANTENNAS", pos_type="casa", synthesis=6, scan_length=[6.0], dtime="60", freq0=['1440MHz'], dfreq=['10MHz'], nchan=[10], stokes="XX XY YX YY", start_time=None, setlimits=False, elevation_limit=0.000000, shadow_limit=0.000000, coords="itrf",lon_lat="None", noup=False, nbands=1, direction=['J2000,0h0m0s,-30d0m0s'], outdir=".",date=[],fromknown=False, feed="perfect X Y",scan_lag=0
