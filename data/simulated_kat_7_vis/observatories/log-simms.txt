@@ -1,0 +1,42 @@
+2015-02-24 12:02:03	INFO	casa::::casa	---
+2015-02-24 12:02:03	INFO	casa::::casa	CASA Version 4.2.2 (prerelease r30986)
+2015-02-24 12:02:03	INFO	casa::::casa	  Tagged on: Thu, 21 Aug 2014
+2015-02-24 12:02:05	INFO	NewMSSimulator::initAnt() 	Using global coordinates for the antennas
+2015-02-24 12:02:05	INFO	NewMSSimulator::initAnt() 	Added rows to ANTENNA table
+2015-02-24 12:02:05	INFO	MSsimulator::initFeeds() 	Added rows to FEED table
+2015-02-24 12:02:05	INFO	MSsimulator::initSpWindows() 	Creating new spectral window 00, ID 1
+2015-02-24 12:02:05	SEVERE		Exception Reports: Quantum::cos illegal unit type ''
+2015-02-24 12:02:05	SEVERE		Exception Reported: Error Illegal Measure record in MeasureHolder::fromRecord
+2015-02-24 12:02:05	SEVERE	+	 in converting Direction parameter
+2015-02-24 12:02:06	INFO	Simulator::reset() 	Resetting all visibility corruption components
+2015-02-24 12:02:06	INFO	Simulator::reset() 	Reset all image-plane corruption components
+2015-02-24 12:02:20	INFO	casa::::casa	---
+2015-02-24 12:02:20	INFO	casa::::casa	CASA Version 4.2.2 (prerelease r30986)
+2015-02-24 12:02:20	INFO	casa::::casa	  Tagged on: Thu, 21 Aug 2014
+2015-02-24 12:02:21	INFO	NewMSSimulator::initAnt() 	Using global coordinates for the antennas
+2015-02-24 12:02:21	INFO	NewMSSimulator::initAnt() 	Added rows to ANTENNA table
+2015-02-24 12:02:21	INFO	MSsimulator::initFeeds() 	Added rows to FEED table
+2015-02-24 12:02:21	INFO	MSsimulator::initSpWindows() 	Creating new spectral window 00, ID 1
+2015-02-24 12:02:21	INFO	simulator::settimes()	Times 
+2015-02-24 12:02:21	INFO	simulator::settimes()+	     Integration time 10s
+2015-02-24 12:02:21	INFO	simulator::settimes()	     Times will be interpreted as hour angles for first source
+2015-02-24 12:02:21	INFO	NewMSSimulator::observe()	First source: 00 @ 00:00:00.00   +30.00.00.00       J2000
+2015-02-24 12:02:21	INFO	NewMSSimulator::observe()+	Full time range: 23-Feb-2015/20:51:36.5 -- 23-Feb-2015/21:03:36.5 TAI with int = 10
+2015-02-24 12:02:21	INFO	NewMSSimulator::observe()	Calculating a total of 72 integrations
+2015-02-24 12:02:23	INFO	Simulator::reset() 	Resetting all visibility corruption components
+2015-02-24 12:02:23	INFO	Simulator::reset() 	Reset all image-plane corruption components
+2015-02-24 12:03:17	INFO	casa::::casa	---
+2015-02-24 12:03:17	INFO	casa::::casa	CASA Version 4.2.2 (prerelease r30986)
+2015-02-24 12:03:17	INFO	casa::::casa	  Tagged on: Thu, 21 Aug 2014
+2015-02-24 12:03:19	INFO	NewMSSimulator::initAnt() 	Using global coordinates for the antennas
+2015-02-24 12:03:19	INFO	NewMSSimulator::initAnt() 	Added rows to ANTENNA table
+2015-02-24 12:03:19	INFO	MSsimulator::initFeeds() 	Added rows to FEED table
+2015-02-24 12:03:19	INFO	MSsimulator::initSpWindows() 	Creating new spectral window 00, ID 1
+2015-02-24 12:03:19	INFO	simulator::settimes()	Times 
+2015-02-24 12:03:19	INFO	simulator::settimes()+	     Integration time 10s
+2015-02-24 12:03:19	INFO	simulator::settimes()	     Times will be interpreted as hour angles for first source
+2015-02-24 12:03:19	INFO	NewMSSimulator::observe()	First source: 00 @ 00:00:00.00   +30.00.00.00       J2000
+2015-02-24 12:03:19	INFO	NewMSSimulator::observe()+	Full time range: 23-Feb-2015/20:51:37.6 -- 23-Feb-2015/21:03:37.6 TAI with int = 10
+2015-02-24 12:03:19	INFO	NewMSSimulator::observe()	Calculating a total of 72 integrations
+2015-02-24 12:03:21	INFO	Simulator::reset() 	Resetting all visibility corruption components
+2015-02-24 12:03:21	INFO	Simulator::reset() 	Reset all image-plane corruption components

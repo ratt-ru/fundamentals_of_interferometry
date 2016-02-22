@@ -1,8 +1,21 @@
 # Fundamentals of Radio Interferometry
 
-An ipython notebook-based book on the fundamentals of radio interferometry
+An ipython notebook-based book on the Fundamentals of Radio Interferometry. This is a community effort with the aim to be constantly improving and adding to the content in an effort to make interferometry as accessible as possible.  Please contribute, whether it is content, editing, or even suggestions.
 
-If you want to contribute, fork the repository, make changes, and when you are ready, submit a pull request.
+## Data Files
+
+There are additional large files (> 1MB), mainly FITS images, which are needed for some of the sections, these can be downloaded [here](https://www.dropbox.com/s/n3jyiajytwuldpu/fundamentals_fits.tar.gz?dl=0), the original simulated KAT-7 measurement sets can be downloaded [here](https://www.dropbox.com/s/kb3p2mthei8dgl9/simulated_KAT-7_ms.tar.gz?dl=0). These are tarballs which should be extracted in the data directory.
+
+```
+cd fundamentals_of_interferometry/data/
+tar xvzf fundamentals_fits.tar.gz
+cd simulated_kat_7_vis
+tar xvzf simulated_KAT-7_ms.tar.gz
+```
+
+## Style Guide
+
+In order to keep the content consistent across sections we have written a [style guide](https://github.com/griffinfoster/fundamentals_of_interferometry/blob/master/0_Introduction/0_introduction.ipynb) in the introduction. Additionally, we have an [editing guide](https://github.com/griffinfoster/fundamentals_of_interferometry/blob/master/0_Introduction/editing_guide.ipynb) for those who wish to suggest changes and edits to the current content.
 
 ## Setup contributor virtualenv
 
@@ -83,7 +96,7 @@ If you just want to run the notebooks interactively you can just use this reposi
 $ git clone https://github.com/griffinfoster/fundamentals_of_interferometry.git
 ```
 
-Now this is a completely clean environment, there are no python packages installed, we need to set those up. There are two ways to do this, first is by running the following pip install commands, the other is by installing from the requirements file included in the this repository. I recommend the requirements file as it contains current version information. The file is in the main directory of the repository or can be downloaded [here](https://raw.githubusercontent.com/griffinfoster/fundamentals_of_interferometry/master/requirements.txt). This will take a bit of time to setup, I recommend a tea break.
+Now this is a completely clean environment, there are no python packages installed, we need to set those up. There are two ways to do this, first is by running the following pip install commands, the other is by installing from the requirements file included in the this repository. I recommend the requirements file as it contains current version information (but, this may fail due to the package ordering, then you will need to try the to install packages manually, described below). The file is in the main directory of the repository or can be downloaded [here](https://raw.githubusercontent.com/griffinfoster/fundamentals_of_interferometry/master/requirements.txt). This will take a bit of time to setup, I recommend a tea break.
 
 ```
 $ pip install --upgrade pip
@@ -129,3 +142,24 @@ The system setuptools/distribute (0.6.24) is not new enough and needs to be upda
 ```
 easy_install -U distribute
 ```
+
+### Ubuntu 14.04 Issues
+
+Matplotlib and numpy have many system-level dependencies, you may be required to install package before the virtualenv setup will work.
+
+#### freetype
+
+If there is a freetype related error, try:
+
+```
+sudo apt-get install libfreetype6-dev
+```
+
+#### fortran
+
+If there is a fortran related error, try:
+
+```
+sudo apt-get install gfortran
+```
+
