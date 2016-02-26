@@ -115,6 +115,7 @@ $ pip install scipy
 $ pip install ipython[all]
 $ pip install --no-deps astropy
 $ pip install aplpy
+$ pip install ipywidgets
 ```
 
 We are now ready to start the ipython notebook server:
