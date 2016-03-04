@@ -44,8 +44,36 @@ KAT7_ants = np.array([
     [-87.988, 75.754, 0.138]
 ], dtype=np.float64)
 
-def ap_index(ntime, na):
-    """ Returns an antenna pair index """
+ALL_SLICE = slice(None, None, 1)
+SRC_SLICE  = (np.newaxis, ALL_SLICE, np.newaxis, np.newaxis, np.newaxis)
+TIME_SLICE = (np.newaxis, np.newaxis, ALL_SLICE, np.newaxis, np.newaxis)
+ANT_SLICE = (ALL_SLICE, np.newaxis, ALL_SLICE, ALL_SLICE, np.newaxis)
+CHAN_SLICE = (np.newaxis, np.newaxis, np.newaxis, np.newaxis, ALL_SLICE)
+
+def ap_index(nsrc=0, ntime=1, na=1, nchan=0):
+    """
+    Returns an antenna pair index suitable for producing
+    a per baseline mapping of per antenna values.
+    Indexes arrays of shape (nsrc, ntime, na, nchan). Returns
+    an array of shape (2, nsrc, time, nbl, chan).
+
+    The following must hold:
+        ntime > 0 and na > 0
+
+    If nsrc == 0 or nchan == 0 these dimension should not
+    be present in the indexed shape and won't be present in
+    the returned shape.
+
+    >>> uvw_ant_coords = np.random.random(size=(10,7,3))
+    >>> api = ap_index(ntime=10, na=7)
+    >>> uvw_mapping = uvw_ant_coords[api]
+    >>> uvw_bl_coords = uvw_mapping[0] - uvw_mapping[1]
+    """
+    needed = (_, S, T, A, C) = True, nsrc > 0, ntime > 0, na > 0, nchan > 0
+
+    assert T, 'Number of timesteps must be greater than 1'
+    assert A, 'Number of antenna must be greater than 1'
+
     nbl = na*(na+1)/2
 
     # This produces the default antenna pair mapping
@@ -54,11 +82,27 @@ def ap_index(ntime, na):
     default_ap = np.tile(np.int32(np.triu_indices(na, 0)), ntime) \
             .reshape(2, ntime, nbl)
 
-    # This produces the actual index
-    time_slice = (np.newaxis, slice(None, None,1), np.newaxis)
-    ap_slice = (slice(None,None,1), np.newaxis, slice(None, None, 1))
+    # The index that we're going to return
+    idx = []
 
-    return [np.arange(ntime)[time_slice], default_ap[ap_slice]]
+    # These slices, when used to index the actual index values
+    # below (np.arange(...) and default_ap), produce broadcasts
+    # when idx is used to index an array
+    if S:
+        src_slice  = tuple([s for s, n in zip(SRC_SLICE, needed) if n])
+        idx.append(np.arange(nsrc)[src_slice])
+
+    time_slice = tuple([t for t, n in zip(TIME_SLICE, needed) if n])
+    idx.append(np.arange(ntime)[time_slice])
+
+    ant_slice  = tuple([a for a, n in zip(ANT_SLICE, needed) if n])
+    idx.append(default_ap[ant_slice])
+
+    if C:
+        chan_slice = tuple([c for c, n in zip(CHAN_SLICE, needed) if n])
+        idx.append(np.arange(nchan)[chan_slice])
+
+    return idx
 
 def KAT7_antenna_uvw_coordinates(ref_ra=60, ref_dec=45):
     """
@@ -70,7 +114,7 @@ def KAT7_antenna_uvw_coordinates(ref_ra=60, ref_dec=45):
     # ref_dec = 0 to 90
 
     bl_uvw = sim_uv(ref_ra=ref_ra, ref_dec=ref_dec,
-        observation_length_in_hrs=12, integration_length=6,
+        observation_length_in_hrs=12, integration_length=3,
         enu_coords=KAT7_ants, latitude=KAT7_location[1])
 
     # Check that we get the correct number of baselines
@@ -86,13 +130,12 @@ def KAT7_antenna_uvw_coordinates(ref_ra=60, ref_dec=45):
     # The na: slice can be derived from antenna coordinates
     ant_uvw = -bl_uvw[:,0:na,:]
 
-    # Sanity check the result. triu_indices
-    # produces default per baseline antenna pair mappings.
-    # When used to index the result array, it produces
+    # Sanity check the result. Use per baseline antenna pair mappings
+    # to index the result array. This produces
     # per antenna values for each baseline which,
     # when differenced, should match the original
     # baseline uvw coordinates
-    ap_idx = ap_index(ntime, na)
+    ap_idx = ap_index(ntime=ntime, na=na)
 
     bl = ant_uvw[ap_idx]
     assert np.allclose(bl[0] - bl[1], bl_uvw.reshape(ntime, nbl, 3))
