@@ -254,7 +254,7 @@ def KAT7_antenna_uvw(ref_ra=60, ref_dec=45):
     ap_idx = ap_index(ntime=ntime, na=na)
 
     bl = ant_uvw[ap_idx]
-    assert np.allclose(bl[0] - bl[1], bl_uvw.reshape(ntime, nbl, 3))
+    assert np.allclose(bl[0] - bl[1], bl_uvw)
 
     return ant_uvw
 
