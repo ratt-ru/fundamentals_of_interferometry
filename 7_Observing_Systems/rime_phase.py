@@ -12,13 +12,13 @@ def create_phase_term(lm, uvw, frequency):
     Arguments:
         lm : float array of shape (nsrc, 2)
             lm coordinates for each source in radians
-        uvw : float array of shape (ntime, nbl, 3)
+        uvw : float array of shape (ntime, na, 3)
             uvw coordinates for each baseline in metres
         frequency : float array of shape (nchan)
             frequencies for each channel in hz
 
     Returns an array of complex values with
-    shape (nsrc, ntime, nbl, nchan) representing
+    shape (nsrc, ntime, na, nchan) representing
     the phase term.
 
     """
@@ -26,12 +26,12 @@ def create_phase_term(lm, uvw, frequency):
     assert lm.ndim == 2 and lm.shape[1] == 2, \
         "lm array should have shape (nsrc, 2)"
     assert uvw.ndim == 3 and uvw.shape[2] == 3, \
-        "uvw array should have shape (ntime, nbl, 3)"
+        "uvw array should have shape (ntime, na, 3)"
     assert frequency.ndim == 1, \
         "frequency array should have shape (nchan)"
 
     nsrc = lm.shape[0]
-    ntime, nbl = uvw.shape[0], uvw.shape[1]
+    ntime, na = uvw.shape[0], uvw.shape[1]
     nchan = frequency.shape[0]
 
     # Reference l and m slices for convenenience and compute n from them
@@ -47,18 +47,18 @@ def create_phase_term(lm, uvw, frequency):
 
     # Compute phase from outer product of the source and uvw coordinates
     phase =((np.outer(l, u) + np.outer(m, v) + np.outer(n, w))
-        .reshape(nsrc, ntime, nbl) )
+        .reshape(nsrc, ntime, na) )
 
     # Now compute and return the complex phase
     return np.exp(-2*np.pi*1j*phase[:,:,:,np.newaxis]
         *frequency[np.newaxis,np.newaxis,np.newaxis,:]/C)
 
-nsrc, ntime, nbl, nchan = 10, 20, 30, 64
+nsrc, ntime, na, nchan = 10, 20, 30, 64
 
 # Create some random lm and UVW coordinates
 lm = np.random.random(size=(nsrc, 2))*0.1
-uvw = np.random.random(size=(ntime, nbl, 3))
+uvw = np.random.random(size=(ntime, na, 3))
 frequency = np.linspace(1.3e9, 1.5e9, nchan)
 
 phase = create_phase_term(lm, uvw, frequency)
-assert phase.shape == (nsrc, ntime, nbl, nchan)
+assert phase.shape == (nsrc, ntime, na, nchan)
