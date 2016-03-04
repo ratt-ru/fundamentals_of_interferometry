@@ -31,21 +31,32 @@ def create_brightness(I, Q, U, V):
 
 def create_sources(ra, dec, I, Q, U, V):
     """
-    Create sources
+    Creates source information given the supplied arrays.
 
     Arguments:
-        ra : array of floats
-            right ascension for each source in degrees
-        dec : array of floats
-            declination for each source in degrees
-        I : array of floats
-            Flux for each source in Jy
-        Q : array of floats
-            Flux for each source in Jy
-        U : array of floats
-            Flux for each source in Jy
-        V : array of floats
-            Flux for each source in Jy
+        ra : ndarray/list
+            An array of shape (nsrc,) describing the
+            right ascension for each source in degrees.
+        dec : ndarray
+            An array of shape (nsrc,) describing the
+            declination for each source in degrees.
+        I : ndarray
+            An array of shape (nsrc,) describing the
+            I stokes for each source in Jy.
+        Q : ndarray
+            An array of shape (nsrc,) describing the
+            Q stokes for each source in Jy.
+        U : ndarray
+            An array of shape (nsrc,) describing the
+            U stokes for each source in Jy.
+        V : ndarray
+            An array of shape (nsrc,) describing the
+            V stokes for each source in Jy.
+
+    Returns:
+        A tuple (lm, B) where lm is a (nsrc, 2) array containing
+        the l and m coordinates in radians and B is
+        a (nsrc, 2, 2) array representing the brightness matrix
     """
 
     # Sanity checks
