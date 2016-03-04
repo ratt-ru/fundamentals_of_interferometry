@@ -17,16 +17,15 @@ def create_brightness(I, Q, U, V):
 
     # Setup our array dimensions
     nsrc = I.shape[0]
-    npol = 4
 
-    # Create a nsrc x npol matrix to hold the complex polarisation values
-    B = np.empty(shape=(nsrc, npol), dtype=np.complex128)
+    # Create a nsrc x 2 x 2 matrix to hold the complex polarisation values
+    B = np.empty(shape=(nsrc, 2, 2), dtype=np.complex128)
 
     # Compute the polarisation values
-    B[:,0] = I + Q
-    B[:,1] = U + V*1j
-    B[:,2] = U - V*1j
-    B[:,3] = I - Q
+    B[:,0,0] = I + Q
+    B[:,0,1] = U + V*1j
+    B[:,1,0] = U - V*1j
+    B[:,1,1] = I - Q
 
     return B
 
@@ -71,10 +70,10 @@ def create_sources(ra, dec, I, Q, U, V):
 
     return lm, create_brightness(I, Q, U, V)
 
-# Create random right ascension coordinates (in hours)
+# Create random right ascension coordinates (in degrees)
 # Create random declination coordinates (in degrees)
-ra = np.random.random(size=(dims.nsrc,)) * 12
-dec = np.random.random(size=(dims.nsrc,)) * 360
+ra = np.random.random(size=(dims.nsrc,)) * 360
+dec = np.random.random(size=(dims.nsrc,)) * 90
 
 # Assuming monochromatic coherent radiation,
 # create some random stokes parameters
@@ -87,4 +86,4 @@ I = np.sqrt(Q**2 + U**2 + V**2)
 lm, B = create_sources(ra, dec, I, Q, U, V)
 
 assert lm.shape == (dims.nsrc, 2)
-assert B.shape == (dims.nsrc, 4)
+assert B.shape == (dims.nsrc, 2, 2)
