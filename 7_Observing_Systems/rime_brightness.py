@@ -36,7 +36,7 @@ def create_sources(ra, dec, I, Q, U, V):
 
     Arguments:
         ra : array of floats
-            right ascension for each source in seconds
+            right ascension for each source in degrees
         dec : array of floats
             declination for each source in degrees
         I : array of floats
@@ -55,10 +55,10 @@ def create_sources(ra, dec, I, Q, U, V):
     assert ra.shape == dec.shape == I.shape == Q.shape == U.shape == V.shape, \
         "Input arrays do not have the same shape."
 
-    # Right ascension (seconds) to radians
+    # Right ascension (degrees) to radians
     # Declination (degrees) to radians
     # Right ascension deltas in radians
-    ra_rad = ra * np.pi / 12
+    ra_rad = ra * np.pi / 180
     dec_rad = dec * np.pi / 180    
     ra_delta_rad = ra - ra[0]
 
