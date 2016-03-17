@@ -10,7 +10,7 @@ Lectures run from March 15 to May 20, 2016 from 2:00 - 4:00 (check the outline b
 	3. Limitations of Single Dish Astronomy - G. Foster ([pdf](https://dl.dropboxusercontent.com/u/4320314/nassp/lectures/1-RadioScience/single_dish_limitations.pdf), [odp](https://dl.dropboxusercontent.com/u/4320314/nassp/lectures/1-RadioScience/single_dish_limitations.odp))
 	4. Modern Interferometric Arrays - G. Foster ([pdf](https://dl.dropboxusercontent.com/u/4320314/nassp/lectures/1-RadioScience/modern_arrays.pdf), [odp](https://dl.dropboxusercontent.com/u/4320314/nassp/lectures/1-RadioScience/modern_arrays.odp))
 2. March 17: Radio Science and Positional Astronomy
-	1. Radio Science - G. Jozsa
+	1. Radio Science - G. Jozsa ([pdf](https://dl.dropboxusercontent.com/u/4320314/nassp/lectures/1-RadioScience/fundamentals_science.pdf), [odp](https://dl.dropboxusercontent.com/u/4320314/nassp/lectures/1-RadioScience/fundamentals_science.odp))
 	2. Positional Astronomy - T. Grobler ([pdf](https://dl.dropboxusercontent.com/u/4320314/nassp/lectures/3-PositionalAstronomy/Positional%20Astronomy.pdf), [odp](https://dl.dropboxusercontent.com/u/4320314/nassp/lectures/3-PositionalAstronomy/Positional%20Astronomy.odp))
 3. April 5: Fourier Transforms Theory and the Visibility Space (part 1)
 4. April 7: Discrete Fourier Transforms and Practical Session
