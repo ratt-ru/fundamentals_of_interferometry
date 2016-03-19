@@ -75,7 +75,7 @@ def sim_uv(ref_ra, ref_dec,
     if plot_on:
         hrs = int(observation_length_in_hrs)
         mins = int(observation_length_in_hrs * 60 - hrs*60)
-        plt.figure(figsize=(5,5))
+        plt.figure(figsize=(8,8))
         plt.title("UV COVERAGE (%dh:%dm @ RA=%f, DEC=%f)" % (hrs,mins,ref_ra,ref_dec))
         plt.plot(uvw[:,0],uvw[:,1],"r.",label="Baselines")
         plt.plot(-uvw[:,0],-uvw[:,1],"b.",label="Conjugate Baselines")

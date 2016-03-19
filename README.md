@@ -122,7 +122,7 @@ We are now ready to start the ipython notebook server:
 
 ```
 $ cd fundamentals_of_interferometry
-$ ipython notebook
+$ jupyter notebook
 ```
 
 To kill the server, type ctrl-c at the terminal and input y. To deactivate the virtualenv and return to your normal environment run:
