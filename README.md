@@ -30,7 +30,7 @@ Currently we are using pip to install packages, the most important package versi
 * numpy 1.10.1
 * matplotlib 1.5.0
 * scipy 0.16.1
-* ipython 4.0.0
+* ipython 4.2.0
 * astropy 1.1.1
 * aplpy 1.0
 * ipywidgets 4.1.1
