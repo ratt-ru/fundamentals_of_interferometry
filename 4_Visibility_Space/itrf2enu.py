@@ -1,9 +1,9 @@
-def convert(fileitrf,save_enu=True,plot=False):
+def convert(fileitrf, save_enu=True, plot=False):
     """
-      xyz : positions of layouts (numpy array)
+    xyz : positions of layouts (numpy array)
     """
-  #if anttab:
-  #    xyz = table(anttab).getcol("POSITION")
+    #if anttab: xyz = table(anttab).getcol("POSITION")
+    
     import numpy as np
     import pyrap.quanta
     import ipdb
@@ -41,7 +41,7 @@ def convert(fileitrf,save_enu=True,plot=False):
     dy = (lat-lat[0])*DEG*deg2m
     #ipdb.set_trace()
     if save_enu : np.savetxt('%s.enu.txt'%name,np.array([dx*1e3,dy*1e3]).T)
-   # if show_base:
+    #if show_base:
     #    pos = table(base).getcol("POSITION")
     #    p1 = dm.position('itrf',*[dq.quantity(pos[:,i],'m') for i in range(3)])
     #    lon = p1['m0']['value']
@@ -51,7 +51,3 @@ def convert(fileitrf,save_enu=True,plot=False):
     if plot: plt.plot(dx,dy,'rx')
 
     return dx,dy
-
-
-
- 
