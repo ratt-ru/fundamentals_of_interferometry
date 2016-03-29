@@ -188,6 +188,8 @@ def baseline_angles(antennaPosition,lamb):
 
 
 def plotuv_freq(antennaPosition,L,dec,h,Nfreqs,lamb0,df):
+    plt.clf()
+    fig=plt.figure(figsize=(10,10))
     c=3e8
     #print "lamb0="+str(lamb0)
     tabfreq=c/(lamb0)+np.arange(Nfreqs)*df
@@ -201,8 +203,8 @@ def plotuv_freq(antennaPosition,L,dec,h,Nfreqs,lamb0,df):
         uv = track_uv_freq(h, tabfreq,B[i, 0], 0., B[i, 1], L, dec, Nfreqs)/1e3;
      #   if i == 0 : print uv
         if uv.max() > maxuv : maxuv=uv.max()
-        plt.plot(uv[:,0], uv[:,1], 'b.',ms=1,alpha=0.5)
-        plt.plot(-uv[:,0], -uv[:,1], 'r.',ms=1,alpha=0.5)
+        plt.plot(uv[:,0], uv[:,1], 'b.',ms=3,alpha=0.5)
+        plt.plot(-uv[:,0], -uv[:,1], 'r.',ms=3,alpha=0.5)
     plt.xlabel('u (klambda)')
     plt.ylabel('v (klambda)')
     plt.title('uv coverage')
@@ -213,6 +215,8 @@ def plotuv_freq(antennaPosition,L,dec,h,Nfreqs,lamb0,df):
     plt.ylim(-mb,mb)
 
 def plotuv(antennaPos,L,dec,h,Ntimes,lamb):
+    plt.clf()
+    fig=plt.figure(figsize=(10,10))
     B = baseline_angles(antennaPos,lamb)
     na = len(antennaPos) #number of antennas 
     nbl = na*(na-1)/2 #number of baselines
@@ -220,8 +224,8 @@ def plotuv(antennaPos,L,dec,h,Ntimes,lamb):
     for i in range (nbl):
         uv = track_uv(h,B[i, 0], 0., B[i, 1], L, dec, Ntimes)/1e3;
         if uv.max() > maxuv : maxuv=uv.max()
-        plt.plot(uv[:,0], uv[:,1], 'b.',ms=1,alpha=0.5)
-        plt.plot(-uv[:,0], -uv[:,1], 'r.',ms=1,alpha=0.5)
+        plt.plot(uv[:,0], uv[:,1], 'b.',ms=2,alpha=0.5)
+        plt.plot(-uv[:,0], -uv[:,1], 'r.',ms=2,alpha=0.5)
     plt.xlabel('u (klambda)')
     plt.ylabel('v (klambda)')
     plt.title('uv coverage')
@@ -229,4 +233,4 @@ def plotuv(antennaPos,L,dec,h,Ntimes,lamb):
     plt.axes().set_aspect('equal')
     plt.xlim(-mb,mb)
     plt.ylim(-mb,mb)
-    plt.show()
+    #plt.show()
