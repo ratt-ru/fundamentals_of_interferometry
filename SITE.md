@@ -12,8 +12,8 @@ Lectures run from March 15 to May 20, 2016 from 2:00 - 4:00 (check the outline b
 2. March 17: Radio Science and Positional Astronomy
 	1. Radio Science - G. Jozsa ([pdf](http://jake.ru.ac.za/~foster/nassp2016/lectures/1-RadioScience/fundamentals_science.pdf), [odp](http://jake.ru.ac.za/~foster/nassp2016/lectures/1-RadioScience/fundamentals_science.odp))
 	2. Positional Astronomy - T. Grobler ([pdf](http://jake.ru.ac.za/~foster/nassp2016/lectures/3-PositionalAstronomy/Positional%20Astronomy.pdf), [odp](http://jake.ru.ac.za/~foster/nassp2016/lectures/3-PositionalAstronomy/Positional%20Astronomy.odp))
-3. April 5: Fourier Transforms Theory and the Visibility Space (part 1)
-4. April 7: Discrete Fourier Transforms and Practical Session
+3. April 5: Fourier Theory and Discrete Fourier Transforms
+4. April 7: Fourier Tutorial and Visibility Space (part 1)
 5. April 12: Visibility Space (part 2)
 6. April 14: Practical Session
 7. April 19: Imaging (part 1)
@@ -106,7 +106,7 @@ Lectures run from March 15 to May 20, 2016 from 2:00 - 4:00 (check the outline b
 
 There are three assignments, only **two** are required.
 
-* Assignment 1: [Positional Astronomy and Visibility Space Problem Set](https://github.com/griffinfoster/fundamentals_of_interferometry/blob/master/4_Visibility_Space/4_problem_set.ipynb) (due April 14)
+* Assignment 1: [Positional Astronomy and Visibility Space Problem Set](https://github.com/griffinfoster/fundamentals_of_interferometry/blob/master/4_Visibility_Space/4_problem_set.ipynb) (due April 19)
 * Assignment 2: An implementation of CLEAN (due May 6)
 * Assignment 3: An implementation of StEfCal (due May 27)
 
