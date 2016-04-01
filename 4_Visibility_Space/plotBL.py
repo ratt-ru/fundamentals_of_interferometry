@@ -87,7 +87,7 @@ def makecubeplot(u,v,w):
         ax.plot([ub], [vb], [wb], 'w')
 
 def UV(u,v,w):
-    fig=plt.figure()
+    fig=plt.figure(figsize=(8,8))
     ax=fig.add_subplot(111,projection='3d')
     ax.plot(u,v,w,'b')
     ax.plot(-u,-v,-w,'r')
@@ -99,7 +99,7 @@ def UV(u,v,w):
     ax.plot(-u,-v,'r--',zdir='w',zs=w.min())
 
 def UVellipse(u,v,w,a,b,v0):
-    fig=plt.figure(0)
+    fig=plt.figure(0, figsize=(8,8))
     
     e1=Ellipse(xy=np.array([0,v0]),width=2*a,height=2*b,angle=0)
     e2=Ellipse(xy=np.array([0,-v0]),width=2*a,height=2*b,angle=0)
