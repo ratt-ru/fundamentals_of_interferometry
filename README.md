@@ -166,3 +166,30 @@ If there is a fortran related error, try:
 ```
 sudo apt-get install gfortran
 ```
+
+### Contributors
+
+* Alexander Akoto-Danso (@akotodanso)
+* Marcellin Atemkeng (@atemkeng)
+* Landman Bester (@landmanbester)
+* Tariq Blecher (@TariqBlecher)
+* Roger Deane (@rdeane)
+* Griffin Foster (@griffinfoster)
+* Julien Girard (@JulienNGirard)
+* Trienko Grobler (@Trienko)
+* Benna Hugo (@bennahugo)
+* Gyula (Josh) Jozsa (@gigjozsa)
+* Ermias Abebe Kassaye (@Ermiasabebe)
+* Jonathan Kenyon (@JSKenyon)
+* Sphesihle Makhathini (@SpheMakh)
+* Modhurita Mitra (@modhurita)
+* Gijs Molenaar (@gijzelaerr)
+* Jared Norman (@jfunction)
+* Ridhima Nunhokee (@Chuneeta)
+* Simon Perkins (@sjperkins)
+* Laura Richter (@LauraRichter)
+* Lerato Sebokolodi (@Sebokolodi)
+* Oleg Smirnov (@o-smirnov)
+* Ulrich Mbou Sob (@ulricharmel)
+* Cyril Tasse (@cyriltasse)
+* Kshitij Thorat (@KshitijT)

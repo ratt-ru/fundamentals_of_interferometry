@@ -131,25 +131,27 @@ For data reduction we will be using NRAO's [CASA](http://casa.nrao.edu/) softwar
 
 ## Contributors
 
-* Alexander Akoto-Danso
-* Marcellin Atemkeng
-* Landman Bester
-* Tariq Blecher
-* Roger Deane
-* Griffin Foster
-* Julien Girard
-* Trienko Grobler
-* Benna Hugo
-* Gyula (Josh) Jozsa
-* Ermias Abebe Kassaye
-* Jonathan Kenyon
-* Sphesihle Makhathini
-* Modhurita Mitra
-* Jared Norman
-* Ridhima Nunhokee
-* Simon Perkins
-* Laura Richter
-* Lerato Sebokolodi
-* Oleg Smirnov
-* UA Mbou Sob
-* Kshitij Thorat
+* Alexander Akoto-Danso (@akotodanso)
+* Marcellin Atemkeng (@atemkeng)
+* Landman Bester (@landmanbester)
+* Tariq Blecher (@TariqBlecher)
+* Roger Deane (@rdeane)
+* Griffin Foster (@griffinfoster)
+* Julien Girard (@JulienNGirard)
+* Trienko Grobler (@Trienko)
+* Benna Hugo (@bennahugo)
+* Gyula (Josh) Jozsa (@gigjozsa)
+* Ermias Abebe Kassaye (@Ermiasabebe)
+* Jonathan Kenyon (@JSKenyon)
+* Sphesihle Makhathini (@SpheMakh)
+* Modhurita Mitra (@modhurita)
+* Gijs Molenaar (@gijzelaerr)
+* Jared Norman (@jfunction)
+* Ridhima Nunhokee (@Chuneeta)
+* Simon Perkins (@sjperkins)
+* Laura Richter (@LauraRichter)
+* Lerato Sebokolodi (@Sebokolodi)
+* Oleg Smirnov (@o-smirnov)
+* Ulrich Mbou Sob (@ulricharmel)
+* Cyril Tasse (@cyriltasse)
+* Kshitij Thorat (@KshitijT)
