@@ -110,7 +110,7 @@ Lectures run from March 15 to May 20, 2016 from 2:00 - 4:00 (check the outline b
 There are three assignments, only **two** are required.
 
 * Assignment 1: [Positional Astronomy and Visibility Space Problem Set](https://github.com/griffinfoster/fundamentals_of_interferometry/blob/master/4_Visibility_Space/4_problem_set.ipynb) (due April 19)
-* Assignment 2: An implementation of CLEAN (due May 6)
+* Assignment 2: [An implementation of Clark's CLEAN Method](https://github.com/griffinfoster/fundamentals_of_interferometry/blob/master/6_Deconvolution/clark_clean_assignment.ipynb), example data is included in the FITS data tarball below (due May 6)
 * Assignment 3: An implementation of StEfCal (due May 27)
 
 ## Exam
