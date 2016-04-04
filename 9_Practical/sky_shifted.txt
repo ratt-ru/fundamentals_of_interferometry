@@ -1,0 +1,2 @@
+#format: name ra_d dec_d i emaj_s emin_s pa_d
+A 0 -30.5 10 0 0 0 
