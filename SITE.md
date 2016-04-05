@@ -12,7 +12,7 @@ Lectures run from March 15 to May 20, 2016 from 2:00 - 4:00 (check the outline b
 2. March 17: Radio Science and Positional Astronomy
 	1. Radio Science - G. Jozsa ([pdf](http://jake.ru.ac.za/~foster/nassp2016/lectures/1-RadioScience/fundamentals_science.pdf), [odp](http://jake.ru.ac.za/~foster/nassp2016/lectures/1-RadioScience/fundamentals_science.odp))
 	2. Positional Astronomy - T. Grobler ([pdf](http://jake.ru.ac.za/~foster/nassp2016/lectures/3-PositionalAstronomy/Positional%20Astronomy.pdf), [odp](http://jake.ru.ac.za/~foster/nassp2016/lectures/3-PositionalAstronomy/Positional%20Astronomy.odp))
-3. April 5: Fourier Theory and Discrete Fourier Transforms
+3. April 5: Fourier Theory and Discrete Fourier Transforms ([pdf](http://jake.ru.ac.za/~foster/nassp2016/lectures/2-MathematicalGroundwork/mathematical_groundwork_I_fourier_theory.pdf), [odp](http://jake.ru.ac.za/~foster/nassp2016/lectures/2-MathematicalGroundwork/mathematical_groundwork_I_fourier_theory.odp))
 4. April 7: Fourier Tutorial and Visibility Space (part 1)
 5. April 12: Visibility Space (part 2)
 6. April 14: Practical Session
