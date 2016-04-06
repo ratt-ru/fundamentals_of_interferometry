@@ -12,19 +12,22 @@ Lectures run from March 15 to May 20, 2016 from 2:00 - 4:00 (check the outline b
 2. March 17: Radio Science and Positional Astronomy
 	1. Radio Science - G. Jozsa ([pdf](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/lectures/1-RadioScience/fundamentals_science.pdf), [odp](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/lectures/1-RadioScience/fundamentals_science.odp))
 	2. Positional Astronomy - T. Grobler ([pdf](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/lectures/3-PositionalAstronomy/Positional%20Astronomy.pdf), [odp](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/lectures/3-PositionalAstronomy/Positional%20Astronomy.odp))
-3. April 5: Fourier Theory and Discrete Fourier Transforms ([pdf](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/lectures/2-MathematicalGroundwork/mathematical_groundwork_I_fourier_theory.pdf), [odp](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/lectures/2-MathematicalGroundwork/mathematical_groundwork_I_fourier_theory.odp))
+3. April 5: Fourier Theory and Discrete Fourier Transforms - G. Jozsa ([pdf](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/lectures/2-MathematicalGroundwork/mathematical_groundwork_I_fourier_theory.pdf), [odp](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/lectures/2-MathematicalGroundwork/mathematical_groundwork_I_fourier_theory.odp))
 4. April 7: Fourier Tutorial and Visibility Space (part 1)
-5. April 12: Visibility Space (part 2)
-6. April 14: Practical Session
-7. April 19: Imaging (part 1)
-8. April 21: Imaging (part 2)
-9. April 26: Deconvolution (part 1)
-10. April 28: Deconvolution (part 2)
-11. May 3: Practical Session
-12. May 6: The Radio Interferometric Measurement Equation (RIME)
-13. May 10: Instrumentation
-14. May 13: Calibration
-15. May 17: Practical Session
+	1. Discrete Fourier Transforms and Sampling Practical (see sections 2.8 and 2.9) - L. Bester
+	2. Visibility Space: The van Cittert-Zernike Theorem - G. Foster ([pdf](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/lectures/4-VisibilitySpace/vanCittert-Zernike.pdf), [odp](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/lectures/4-VisibilitySpace/vanCittert-Zernike.odp))
+	3. Visibility Space: The 2-element Interferometer - G. Foster, J. Girard ([pdf](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/lectures/4-VisibilitySpace/2_element_interferometer.pdf))
+5. April 12: Visibility Space - J. Girard (part 2)
+6. April 14: Practical Session - S. Makhathini
+7. April 19: Imaging - G. Foster (part 1)
+8. April 21: Imaging - G. Foster (part 2)
+9. April 26: Deconvolution - G. Foster (part 1)
+10. April 28: Deconvolution - G. Foster (part 2)
+11. May 3: Practical Session - S. Makhathini, S. Sirothia
+12. May 6: The Radio Interferometric Measurement Equation (RIME) - O. Smirnov
+13. May 10: Instrumentation - G. Foster
+14. May 13: Calibration - T. Grobler
+15. May 17: Practical Session - S. Sirothia
 16. May 20: Exam Talks and Questions
 
 ## Book Outline
