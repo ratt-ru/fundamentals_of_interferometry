@@ -125,7 +125,14 @@ To setup the ipython notebook environment to interactively use the book follow t
 
 ## Data
 
-There are additional large files (> 1MB), mainly FITS images, which are needed for some of the sections, these can be downloaded [here](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/data/fundamentals_fits.tar.gz) ([alt](https://www.dropbox.com/s/n3jyiajytwuldpu/fundamentals_fits.tar.gz?dl=0)), the original simulated KAT-7 measurement sets can be downloaded [here](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/data/simulated_KAT-7_ms.tar.gz) ([alt](https://www.dropbox.com/s/kb3p2mthei8dgl9/simulated_KAT-7_ms.tar.gz?dl=0)). Data for the practical sessions can be downloaded [here](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/data/practical_data.tar.gz).
+There are additional large files (> 1MB), mainly FITS images, which are needed for some of the sections, these can be downloaded [here](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/data/fundamentals_fits.tar.gz) ([alt](https://www.dropbox.com/s/n3jyiajytwuldpu/fundamentals_fits.tar.gz?dl=0)), the original simulated KAT-7 measurement sets can be downloaded [here](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/data/simulated_KAT-7_ms.tar.gz) ([alt](https://www.dropbox.com/s/kb3p2mthei8dgl9/simulated_KAT-7_ms.tar.gz?dl=0)).
+
+### Practical 1 Data Sets:
+
+* [Notebook 1 Data Set](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/data/practical_data.tar.gz) (4.7 MB)
+* [Measurement Set 1](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/data/kabel.ms.tar.gz) (187 MB)
+* [Measurement Set 2](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/data/tokolo.ms.tar.gz) (184 MB)
+* [Measurement Set 3](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/data/zwai.ms.tar.gz) (264 MB)
 
 ## External Software
 
