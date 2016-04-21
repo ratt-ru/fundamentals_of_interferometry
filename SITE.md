@@ -18,10 +18,10 @@ Lectures run from March 15 to May 20, 2016 from 2:00 - 4:00 (check the outline b
 	2. Visibility Space: The van Cittert-Zernike Theorem - G. Foster ([pdf](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/lectures/4-VisibilitySpace/vanCittert-Zernike.pdf), [odp](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/lectures/4-VisibilitySpace/vanCittert-Zernike.odp))
 5. April 12: Visibility Space - J. Girard ([pdf](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/lectures/4-VisibilitySpace/4-The-Visibility-Space.pdf))
 6. April 14: Practical Session - S. Makhathini ([notebook](https://github.com/griffinfoster/fundamentals_of_interferometry/blob/master/9_Practical/9_1_visualisation-inspection.ipynb), [data](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/data/practical_data.tar.gz))
-7. April 19: Imaging - G. Foster (part 1)
-8. April 21: Imaging - G. Foster (part 2)
-9. April 26: Deconvolution - G. Foster (part 1)
-10. April 28: Deconvolution - G. Foster (part 2)
+7. April 19: Imaging: Spatial Frequencies, Sampling Functions, and Point Spread Functions - G. Foster ([pdf](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/lectures/5-Imaging/spatial_frequencies_and_sampling.pdf), [odp](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/lectures/5-Imaging/spatial_frequencies_and_sampling.odp))
+8. April 21: Imaging: Gridding, Weight Functions, the W-term - G. Foster ([pdf](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/lectures/5-Imaging/imaging_details.pdf), [odp](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/lectures/5-Imaging/imaging_details.odp))
+9. April 26: Deconvolution - G. Foster
+10. April 28: Practical Session - S. Makhathini
 11. May 3: Practical Session - S. Makhathini, S. Sirothia
 12. May 6: The Radio Interferometric Measurement Equation (RIME) - O. Smirnov
 13. May 10: Instrumentation - G. Foster
