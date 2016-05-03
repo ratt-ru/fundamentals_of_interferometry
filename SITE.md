@@ -20,12 +20,12 @@ Lectures run from March 15 to May 20, 2016 from 2:00 - 4:00 (check the outline b
 6. April 14: Practical Session - S. Makhathini ([notebook](https://github.com/griffinfoster/fundamentals_of_interferometry/blob/master/9_Practical/9_1_visualisation-inspection.ipynb), [data](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/data/practical_data.tar.gz))
 7. April 19: Imaging: Spatial Frequencies, Sampling Functions, and Point Spread Functions - G. Foster ([pdf](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/lectures/5-Imaging/spatial_frequencies_and_sampling.pdf), [odp](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/lectures/5-Imaging/spatial_frequencies_and_sampling.odp))
 8. April 21: Imaging: Gridding, Weight Functions, the W-term - G. Foster ([pdf](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/lectures/5-Imaging/imaging_details.pdf), [odp](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/lectures/5-Imaging/imaging_details.odp))
-9. April 26: Deconvolution - G. Foster
+9. April 26: Deconvolution - G. Foster ([pdf](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/lectures/6-Deconvolution/clean_iterative_deconvolution.pdf), [odp](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/lectures/6-Deconvolution/clean_iterative_deconvolution.odp))
 10. April 28: Practical Session - S. Makhathini
-11. May 3: Practical Session - S. Makhathini, S. Sirothia
-12. May 6: The Radio Interferometric Measurement Equation (RIME) - O. Smirnov
+11. May 3: The Radio Interferometric Measurement Equation (RIME) - O. Smirnov ([pdf](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/lectures/7-ObservingSystems/RIME.pdf), [odp](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/lectures/7-ObservingSystems/RIME.odp))
+12. May 6: Practical Session - S. Makhathini, S. Sirothia
 13. May 10: Instrumentation - G. Foster
-14. May 13: Calibration - T. Grobler
+14. May 13: Calibration - T. Grobler ([pdf](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/lectures/8-Calibration/Calibration.pdf), [odp](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/lectures/8-Calibration/Calibration.odp))
 15. May 17: Practical Session - S. Sirothia
 16. May 20: Exam Talks and Questions
 
@@ -87,7 +87,7 @@ Lectures run from March 15 to May 20, 2016 from 2:00 - 4:00 (check the outline b
     3. [CLEAN Implementations](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/6_Deconvolution/6_3_clean_flavours.html)
 		1. [Hogbom's Method](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/6_Deconvolution/hogbom_clean.html)
     4. [Residuals and Image Quality](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/6_Deconvolution/6_4_residuals_and_iqa.html)
-    5. Source Finding and Detection
+    5. [Source Finding and Detection](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/6_Deconvolution/6_5_source_finding.html)
     6. [Further Reading and References](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/6_Deconvolution/6_x_further_reading_and_references.html)
 7. Observing Systems
     1. Jones Notation
