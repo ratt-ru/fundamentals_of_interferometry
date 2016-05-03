@@ -90,21 +90,21 @@ Lectures run from March 15 to May 20, 2016 from 2:00 - 4:00 (check the outline b
     5. [Source Finding and Detection](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/6_Deconvolution/6_5_source_finding.html)
     6. [Further Reading and References](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/6_Deconvolution/6_x_further_reading_and_references.html)
 7. Observing Systems
-	1. Jones Notation
-	2. The Measurement Equation (RIME)
-	3. Analogue Electronics
+	1. [Jones Notation](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/7-ObservingSystems/7_1_jones_notation.html)
+	2. [The Measurement Equation (RIME)](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/7-ObservingSystems/7_2_rime.html)
+	3. [Analogue Electronics](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/7-ObservingSystems/7_3_analogue.html)
 	4. Digital Electronics
 	5. Primary Beam
 	6. Polarization and Antenna Feeds
 	7. Propagation Effects
 	8. Radio Frequency Interference (RFI)
 	9. Further Reading and References
-8. Calibration
-    1. Calibration as a Least Squares Problem
-    2. 1GC calibration
-    3. 2GC calibration
-    4. 3GC calibration
-    5. Further Reading and References
+8. [Calibration](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/8-Calibration/8_0_Introduction.html)
+    1. [Calibration as a Least Squares Problem](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/8-Calibration/8_1_Calibration_Least_Squares_Problem.html)
+    2. [1GC calibration](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/8-Calibration/8_2_1GC.html)
+    3. [2GC calibration](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/8-Calibration/8_3_2GC.html)
+    4. [3GC calibration](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/8-Calibration/8_4_3GC.html)
+    5. [Further Reading and References](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/8-Calibration/8_x_further_reading_and_references.html)
 
 ## Assignments
 
