@@ -90,16 +90,15 @@ Lectures run from March 15 to May 20, 2016 from 2:00 - 4:00 (check the outline b
     5. [Source Finding and Detection](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/6_Deconvolution/6_5_source_finding.html)
     6. [Further Reading and References](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/6_Deconvolution/6_x_further_reading_and_references.html)
 7. Observing Systems
-    1. Jones Notation
-    2. The Measurement Equation (RIME)
-    3. Direction-dependent and Independent effects
-    4. Electronics: bandpass, gain variation, system noise/sensitivity
-    5. Primary Beam
-    6. Polarization and Feed Leakage
-    7. Antenna Mounts and Parallactic Angle
-    8. Propagation Effects
-    9. Radio Frequency Interference (RFI)
-    10. Further Reading and References
+	1. Jones Notation
+	2. The Measurement Equation (RIME)
+	3. Analogue Electronics
+	4. Digital Electronics
+	5. Primary Beam
+	6. Polarization and Antenna Feeds
+	7. Propagation Effects
+	8. Radio Frequency Interference (RFI)
+	9. Further Reading and References
 8. Calibration
     1. Calibration as a Least Squares Problem
     2. 1GC calibration
@@ -113,7 +112,7 @@ There are three assignments, only **two** are required.
 
 * Assignment 1: [Positional Astronomy and Visibility Space Problem Set](https://github.com/griffinfoster/fundamentals_of_interferometry/blob/master/4_Visibility_Space/4_problem_set.ipynb) (due April 19)
 * Assignment 2: [An implementation of Clark's CLEAN Method](https://github.com/griffinfoster/fundamentals_of_interferometry/blob/master/6_Deconvolution/clark_clean_assignment.ipynb), example data is included in the FITS data tarball below (due May 6)
-* Assignment 3: An implementation of StEfCal (due May 27)
+* Assignment 3: [An implementation of StEfCal](https://github.com/griffinfoster/fundamentals_of_interferometry/blob/master/8_Calibration/8_problem_set.ipynb) (due May 27)
 
 ## Exam
 
