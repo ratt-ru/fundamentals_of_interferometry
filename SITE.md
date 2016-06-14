@@ -24,7 +24,7 @@ Lectures run from March 15 to May 20, 2016 from 2:00 - 4:00 (check the outline b
 10. April 28: Practical Session - S. Makhathini
 11. May 3: The Radio Interferometric Measurement Equation (RIME) - O. Smirnov ([pdf](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/lectures/7-ObservingSystems/RIME.pdf), [odp](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/lectures/7-ObservingSystems/RIME.odp))
 12. May 6: Practical Session - S. Makhathini, S. Sirothia
-13. May 10: Instrumentation - G. Foster
+13. May 10: Instrumentation - G. Foster ([pdf](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/lectures/7-ObservingSystems/instrumentation.pdf), [odp](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/lectures/7-ObservingSystems/instrumentation.odp))
 14. May 13: Calibration - T. Grobler ([pdf](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/lectures/8-Calibration/Calibration.pdf), [odp](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/lectures/8-Calibration/Calibration.odp))
 15. May 17: Practical Session - S. Sirothia
 16. May 20: Exam Talks and Questions
