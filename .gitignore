@@ -1,3 +1,12 @@
+# Data Directory
+data/fits/
+data/fundamentals_fits.tar.gz
+data/notes
+data/practical/
+data/practical_data.tar.gz
+data/simulated_kat_7_vis/simulated_KAT-7_ms.tar.gz
+data/source/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
