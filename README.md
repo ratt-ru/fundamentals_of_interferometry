@@ -34,6 +34,7 @@ Currently we are using pip to install packages, the most important package versi
 * astropy 1.1.1
 * aplpy 1.0
 * ipywidgets 4.1.1
+* healpy 1.10.3
 
 This guide was developed from these references:
 
@@ -117,6 +118,7 @@ $ pip install scipy
 $ pip install ipython[all]
 $ pip install --no-deps astropy
 $ pip install aplpy
+$ pip install healpy
 $ pip install ipywidgets
 ```
 
