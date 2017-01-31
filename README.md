@@ -34,6 +34,7 @@ Currently we are using pip to install packages, the most important package versi
 * astropy 1.1.1
 * aplpy 1.0
 * ipywidgets 4.1.1
+* healpy 1.10.3
 
 This guide was developed from these references:
 
@@ -117,6 +118,7 @@ $ pip install scipy
 $ pip install ipython[all]
 $ pip install --no-deps astropy
 $ pip install aplpy
+$ pip install healpy
 $ pip install ipywidgets
 ```
 
@@ -137,6 +139,21 @@ In the future, when you wish to return to the virtualenv, change to the fundamen
 
 ```
 $ source bin/activate
+```
+
+### Data
+
+We have tried to not include too many large files (e.g. FITS, measurement sets) into the repository to keep the size small. In order to fully utilize the notebooks please download the data sets [here](https://www.dropbox.com/s/n3jyiajytwuldpu/fundamentals_fits.tar.gz?dl=0), and the simulated KAT-7 measurement sets [here](https://www.dropbox.com/s/kb3p2mthei8dgl9/simulated_KAT-7_ms.tar.gz?dl=0).
+
+In the root directory of the repository there is a ``data/`` directory, this is where we want to decompress the data into. To do so:
+
+```
+$ cd [fundamentals root]/data/
+$ mv [location of download]/fundamentals_fits.tar.gz .
+$ tar xvzf fundamentals_fits.tar.gz
+$ cd simulated_kat_7_vis/
+$ mv [location of download]/simulated_KAT-7_ms.tar.gz .
+$ tar xvzf simulated_KAT-7_ms.tar.gz
 ```
 
 ### Ubuntu 12.04 Issues

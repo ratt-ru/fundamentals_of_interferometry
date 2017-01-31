@@ -124,7 +124,16 @@ To setup the ipython notebook environment to interactively use the book follow t
 
 ## Data
 
-There are additional large files (> 1MB), mainly FITS images, which are needed for some of the sections, these can be downloaded [here](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/data/fundamentals_fits.tar.gz) ([alt](https://www.dropbox.com/s/n3jyiajytwuldpu/fundamentals_fits.tar.gz?dl=0)), the original simulated KAT-7 measurement sets can be downloaded [here](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/data/simulated_KAT-7_ms.tar.gz) ([alt](https://www.dropbox.com/s/kb3p2mthei8dgl9/simulated_KAT-7_ms.tar.gz?dl=0)).
+There are additional large files (> 1MB), mainly FITS images, which are needed for some of the sections, these can be downloaded [here](https://www.dropbox.com/s/n3jyiajytwuldpu/fundamentals_fits.tar.gz?dl=0), the original simulated KAT-7 measurement sets can be downloaded [here](https://www.dropbox.com/s/kb3p2mthei8dgl9/simulated_KAT-7_ms.tar.gz?dl=0). To place them in the correct paths do the following:
+
+```
+$ cd [fundamentals root]/data/
+$ mv [location of download]/fundamentals_fits.tar.gz .
+$ tar xvzf fundamentals_fits.tar.gz
+$ cd simulated_kat_7_vis/
+$ mv [location of download]/simulated_KAT-7_ms.tar.gz .
+$ tar xvzf simulated_KAT-7_ms.tar.gz
+```
 
 ### Practical 1 Data Sets:
 
