@@ -8,7 +8,8 @@ import numpy as np
 
 NO_ANTENNA = 27
 NO_BASELINES = NO_ANTENNA * (NO_ANTENNA - 1) / 2 + NO_ANTENNA
-CENTRE_CHANNEL = 1e9 / 299792458 #Wavelength of 1 GHz
+global CENTRE_CHANNEL
+CENTRE_CHANNEL = 299792458 / 1e9 #Wavelength of 1 GHz
 #Antenna positions (from Measurement Set "ANTENNA" table)
 #Here we assumed these are in Earth Centred Earth Fixed coordinates, see:
 #https://en.wikipedia.org/wiki/ECEF
