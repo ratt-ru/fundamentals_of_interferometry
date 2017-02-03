@@ -21,7 +21,7 @@ def fft_degrid(model_image, uvw, ref_lda, Nx, Ny, convolution_filter):
     model_vis_regular = np.zeros(model_image.shape, dtype=np.complex64)
     for p in xrange(model_image.shape[0]):
         model_vis_regular[p, :, :] = \
-            np.fft.ifftshift(np.fft.fft2(np.fft.fftshift(model_image[p, :, :])))
+            np.fft.fftshift(np.fft.fft2(np.fft.ifftshift(model_image[p, :, :])))
     vis = \
         np.zeros([uvw.shape[0],
                   ref_lda.shape[0],
