@@ -7,7 +7,7 @@ def fft_degrid(model_image, uvw, ref_lda, Nx, Ny, convolution_filter):
     Keyword arguments:
     model_image --- Model image
     uvw --- interferometer's scaled uvw coordinates
-            (Prerequisite: these uv points are already scaled by the simularity
+            (Prerequisite: these uv points are already scaled by the similarity
             theorem, such that -N_x*Cell_l*0.5 <= theta_l <= N_x*Cell_l*0.5 and
             -N_y*Cell_m*0.5 <= theta_m <= N_y*Cell_m*0.5)
     ref_lda --- array of reference lambdas (size of vis channels)
