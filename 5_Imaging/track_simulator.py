@@ -1,12 +1,13 @@
 import numpy as np
 from matplotlib import pyplot as plt
-
 def sim_uv(ref_ra, ref_dec, 
            observation_length_in_hrs, 
            integration_length, 
            enu_coords,
            latitude,
-           plot_on=False):
+           plot_on=False,
+           same_scales_plot=False,
+           plot_channel=299792458.0/1e9):
     """
     Simulates uv coverage given antenna coordintes in the East-North-Up frame
     
@@ -17,6 +18,8 @@ def sim_uv(ref_ra, ref_dec,
     enu_coordinates --- East-North-Up coordinates of antenna array at some latitude
     latitude --- Latitude (degrees) of reference point near antenna array
     plot_on --- Plots the projected u,v coverage after simulation (default=false)
+    same_scales_plot --- sets x and y limits to be the same on the plots
+    plot_channel --- scales the plot (expects channel to be given in wavelength)
     """
     no_antenna = enu_coords.shape[0]
     no_baselines = no_antenna * (no_antenna - 1) // 2 + no_antenna
@@ -77,10 +80,18 @@ def sim_uv(ref_ra, ref_dec,
         mins = int(observation_length_in_hrs * 60 - hrs*60)
         plt.figure(figsize=(8,8))
         plt.title("UV COVERAGE (%dh:%dm @ RA=%f, DEC=%f)" % (hrs,mins,ref_ra,ref_dec))
-        plt.plot(uvw[:,0],uvw[:,1],"r.",label="Baselines")
-        plt.plot(-uvw[:,0],-uvw[:,1],"b.",label="Conjugate Baselines")
-        plt.xlabel("u ($cycles\cdot rad^{-1}\cdot m^{-1}$)")
-        plt.ylabel("v ($cycles\cdot rad^{-1}\cdot m^{-1}$)")
+        plt.plot(uvw[:,0]/plot_channel/1e4,
+                 uvw[:,1]/plot_channel/1e4,
+                 "r.",label="Baselines")
+        plt.plot(-uvw[:,0]/plot_channel/1e4,
+                 -uvw[:,1]/plot_channel/1e4,
+                 "b.",label="Conjugate Baselines")
+        plt.xlabel("u ($k\lambda$)")
+        plt.ylabel("v ($k\lambda$)")
         plt.legend(bbox_to_anchor=(1.75, 1.0))
+        if same_scales_plot:
+            maxval = max(abs(np.max(uvw/plot_channel/1e4)), abs(np.min(uvw/plot_channel/1e4)))
+            plt.xlim([-maxval,maxval])
+            plt.ylim([-maxval,maxval])
         plt.show()
     return uvw

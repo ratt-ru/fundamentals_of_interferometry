@@ -21,7 +21,7 @@ class AA_filter:
         self.full_sup_wo_padding = (filter_half_support * 2 + 1)
         self.full_sup = self.full_sup_wo_padding + 2 #+ padding
         self.no_taps = self.full_sup + (self.full_sup - 1) * (filter_oversampling_factor - 1)
-        taps = np.arange(-self.no_taps//2,self.no_taps//2 + 1)/float(filter_oversampling_factor)
+        taps = np.arange(self.no_taps)/float(filter_oversampling_factor) - self.full_sup / 2
         if filter_type == "box":
             self.filter_taps = np.where((taps >= -0.5) & (taps <= 0.5),
                                         np.ones([len(taps)]),np.zeros([len(taps)]))
@@ -33,3 +33,4 @@ class AA_filter:
             self.filter_taps = np.sin(np.pi/alpha_1*(taps+0.00000000001))/(np.pi*(taps+0.00000000001))*np.exp(-(taps/alpha_2)**2)
         else:
             raise ValueError("Expected one of 'box','sinc' or 'gausian_sinc'")
+
