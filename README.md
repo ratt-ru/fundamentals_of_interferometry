@@ -210,3 +210,4 @@ sudo apt-get install gfortran
 * Ulrich Mbou Sob ([@ulricharmel](https://github.com/ulricharmel))
 * Cyril Tasse ([@cyriltasse](https://github.com/cyriltasse))
 * Kshitij Thorat ([@KshitijT](https://github.com/KshitijT))
+* Etienne Bonnassieux ([@ebonnassieux](https://github.com/ebonnassieux))
