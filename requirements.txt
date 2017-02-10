@@ -7,3 +7,4 @@ astropy==1.1.1
 aplpy==1.0
 ipywidgets==4.1.1
 healpy==1.10.3
+ephem==3.7.6.0
