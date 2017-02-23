@@ -84,9 +84,9 @@ def ipy_label(sdict, cntname, labelstr, titlestr):
     
     if cntname=='chapter' : tstr='$\mathfrak{C}$ %d' % sdict['chapter_cnt']
     elif cntname=='section' : tstr='$\S$ %d.%d' % (sdict['chapter_cnt'], sdict['section_cnt'])
-    elif cntname=='subsection' : tstr='$\S$ %d.%d.%d' % (sdict['chapter_cnt'], sdict['section_cnt'], sdict['subsection_cnt'])
-    elif cntname=='subsubsection' : tstr='%d.%d.%d.%d' % (sdict['chapter_cnt'], sdict['section_cnt'], sdict['subsection_cnt'], sdict['subsubsection_cnt'])
-    elif cntname=='subsubsubsection' : tstr='%d.%d.%d.%d.%d' % (sdict['chapter_cnt'], sdict['section_cnt'], sdict['subsection_cnt'], sdict['subsubsection_cnt'], sdict['subsubsubsection_cnt'])
+    elif cntname=='subsection' : tstr='$\S$ %d.%d.%d' % (sdict['chapter_cnt'], sdict['section_cnt'], sdict['sectionl1_cnt'])
+    elif cntname=='subsubsection' : tstr='%d.%d.%d.%d' % (sdict['chapter_cnt'], sdict['section_cnt'], sdict['sectionl1_cnt'], sdict['sectionl2_cnt'])
+    elif cntname=='subsubsubsection' : tstr='%d.%d.%d.%d.%d' % (sdict['chapter_cnt'], sdict['section_cnt'], sdict['sectionl1_cnt'], sdict['sectionl2_cnt'], sdict['sectionl3_cnt'])
     elif cntname=='figure' : tstr='Figure %d.%d' % (sdict['chapter_cnt'], sdict['figure_cnt'])
     elif cntname=='equation' : tstr='Equation %d.%d' % (sdict['chapter_cnt'], sdict['equation_cnt'])
     elif cntname=='table' : tstr='Table %d.%d' % (sdict['chapter_cnt'], sdict['table_cnt'])
