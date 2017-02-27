@@ -1,9 +1,8 @@
 #!/usr/bin/python
 
-#Created: sirothia@gmail.com 20170207
+#20170227: direct display instead of ipywidgets
+#20170207: Created sirothia@gmail.com 
 #for label and ref for use in ipython notebook
-
-from ipywidgets import widgets
 
 ##########################
 #function for giving the filename
@@ -82,11 +81,11 @@ def ipy_label(sdict, cntname, labelstr, titlestr):
     if nerr==0 and sdict['update_ipyref'] : increment_ipyrefcnt( sdict , cntname)
 
     
-    if cntname=='chapter' : tstr='$\mathfrak{C}$ %d' % sdict['chapter_cnt']
-    elif cntname=='section' : tstr='$\S$ %d.%d' % (sdict['chapter_cnt'], sdict['section_cnt'])
-    elif cntname=='subsection' : tstr='$\S$ %d.%d.%d' % (sdict['chapter_cnt'], sdict['section_cnt'], sdict['sectionl1_cnt'])
-    elif cntname=='subsubsection' : tstr='%d.%d.%d.%d' % (sdict['chapter_cnt'], sdict['section_cnt'], sdict['sectionl1_cnt'], sdict['sectionl2_cnt'])
-    elif cntname=='subsubsubsection' : tstr='%d.%d.%d.%d.%d' % (sdict['chapter_cnt'], sdict['section_cnt'], sdict['sectionl1_cnt'], sdict['sectionl2_cnt'], sdict['sectionl3_cnt'])
+    if cntname=='chapter' : tstr='\\212D\\0020 %d' % sdict['chapter_cnt']
+    elif cntname=='section' : tstr='\\00A7\\0020 %d.%d' % (sdict['chapter_cnt'], sdict['section_cnt'])
+    elif cntname=='subsection' : tstr='\\00A7\\0020 %d.%d.%d' % (sdict['chapter_cnt'], sdict['section_cnt'], sdict['sectionl1_cnt'])
+    elif cntname=='subsubsection' : tstr='\\00A7\\0020 %d.%d.%d.%d' % (sdict['chapter_cnt'], sdict['section_cnt'], sdict['sectionl1_cnt'], sdict['sectionl2_cnt'])
+    elif cntname=='subsubsubsection' : tstr='\\00A7\\0020 %d.%d.%d.%d.%d' % (sdict['chapter_cnt'], sdict['section_cnt'], sdict['sectionl1_cnt'], sdict['sectionl2_cnt'], sdict['sectionl3_cnt'])
     elif cntname=='figure' : tstr='Figure %d.%d' % (sdict['chapter_cnt'], sdict['figure_cnt'])
     elif cntname=='equation' : tstr='Equation %d.%d' % (sdict['chapter_cnt'], sdict['equation_cnt'])
     elif cntname=='table' : tstr='Table %d.%d' % (sdict['chapter_cnt'], sdict['table_cnt'])
@@ -103,31 +102,11 @@ def ipy_label(sdict, cntname, labelstr, titlestr):
 ##########################
 
 
-##########################
-#A simple function for ipy_ref
-#no longer used
-##########################
-def ipy_sref(sdict, labelstr, stval):
-    
-    nerr=0
-    lstr=labelstr
-    lstr=lstr.replace(":", "_")
-    if sdict.has_key(labelstr) :
-        stval['child'] = widgets.Label(sdict[labelstr])
-        stval['class'] = lstr
-        if debug_lvl > 10: print 'id', labelstr, 'use class', stval['class']
-    else :
-        print 'The key', labelstr, 'does not exist'
-        nerr+=1
-
-    return nerr
-##########################
 
 ##########################
 #for reference use
-#ipy_ref(sdict, labelstr, stval, titlestr='', sdisplay='default', idsub='', debug_lvl=0)
+#rstr=ipy_ref(sdict, labelstr, titlestr='', sdisplay='default', idsub='', debug_lvl=0)
 #sdict : is internal not to be used
-#stval : is internal not be used
 #labelstr : user choice of label, e.g. idstr is used here 
 #titlestr : can be a title associated with label
 #idsub : use _xxx where xxx is random text that needs to be different every time the reference is used 
@@ -137,31 +116,32 @@ def ipy_sref(sdict, labelstr, stval):
 #          'intfile' will display reference with internal to file reference symbol
 #          'extfile' will display reference with external to file reference symbol
 ##########################
-def ipy_ref(sdict, labelstr, stval, titlestr='', sdisplay='default', idsub='', debug_lvl=0):
+def ipy_ref(sdict, labelstr, titlestr='', sdisplay='default', idsub='', debug_lvl=0):
     
+    rstr='[Error] ipy_ref => HTML string Error check labelstr/idstr or idsub/idcntr'
     nerr=0
-    lstr=labelstr+idsub
+    lstr=labelstr
+    if idsub!='' : lstr=lstr+idsub
     lstr=lstr.replace(":", "_")
-    if idsub!='' : lstr+idsub
     if sdict.has_key(labelstr) :
         kstrarr=sdict[labelstr].split()
         tstr=kstrarr[0]
         if kstrarr[0]=='Figure' : tstr='Fig.'
         if kstrarr[0]=='Equation' : tstr='Eqn.'
         
-        if sdisplay=='extfile' :  ustr=tstr + ' ' + kstrarr[1] + ' ' + titlestr + '$\\rightarrow$'
-        elif sdisplay=='intfile' :  ustr=tstr + ' ' + kstrarr[1] + ' ' + titlestr + '$\\curvearrowright$'
+        if sdisplay=='extfile' :  ustr=tstr + ' ' + kstrarr[1] + ' ' + titlestr + ' \\2192'
+        elif sdisplay=='intfile' :  ustr=tstr + ' ' + kstrarr[1] + ' ' + titlestr + ' \\21B7'
         elif  titlestr!='' : ustr=tstr + ' ' + kstrarr[1] + ' ' + titlestr
         else : ustr=sdict[labelstr]
         
         if debug_lvl > 10: print ustr
-        stval['child'] = widgets.Label(ustr)
-        stval['class'] = lstr
-        if debug_lvl > 0: print '[Suggestion] ipy_ref =>  id', labelstr, 'use class', stval['class']
+        rstr='<style> .'+lstr+':after {content: "'+ustr+'";} </style>'
+        if debug_lvl > 10: print '[Debug] ipy_ref =>  rstr', rstr
+        if debug_lvl > 0: print '[Suggestion] ipy_ref =>  id', labelstr, 'use class', lstr
     else :
         print '[Warning] ipy_ref =>  The key', labelstr, 'does not exist'
         nerr+=1
     
-    return nerr
+    return rstr
 ##########################
 
