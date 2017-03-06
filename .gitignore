@@ -1,6 +1,7 @@
 # Data Directory
 data/fits/
 data/fundamentals_fits.tar.gz
+data/*.tgz
 data/notes
 data/practical/
 data/practical_data.tar.gz
