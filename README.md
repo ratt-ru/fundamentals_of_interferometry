@@ -35,6 +35,7 @@ Currently we are using pip to install packages, the most important package versi
 * aplpy 1.0
 * ipywidgets 4.1.1
 * healpy 1.10.3
+* ephem 3.7.6.0
 
 This guide was developed from these references:
 
@@ -120,6 +121,7 @@ $ pip install --no-deps astropy
 $ pip install aplpy
 $ pip install healpy
 $ pip install ipywidgets
+$ pip install ephem
 ```
 
 We are now ready to start the ipython notebook server:
