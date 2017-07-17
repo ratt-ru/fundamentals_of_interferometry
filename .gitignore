@@ -8,6 +8,7 @@ data/practical_data.tar.gz
 data/simulated_kat_7_vis/simulated_KAT-7_ms.tar.gz
 data/simulated_kat_7_vis/*.ms
 data/source/
+data/*.tgz
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

@@ -2,7 +2,7 @@
 
 An ipython notebook-based book on the Fundamentals of Radio Interferometry. This is a community effort with the aim to be constantly improving and adding to the content in an effort to make interferometry as accessible as possible.  Please contribute, whether it is content, editing, or even suggestions.
 
-This book is currently being used to teach the NASSP 2016 [Fundamentals of Radio Interferometry](https://griffinfoster.github.io/fundamentals_of_interferometry/) Masters' Course.
+This book is currently being used to teach the NASSP [Fundamentals of Radio Interferometry](https://ratt-ru.github.io/fundamentals_of_interferometry/) Masters' Course.
 
 ## Data Files
 
@@ -21,7 +21,7 @@ In order to keep the content consistent across sections we have written a [style
 
 ## Setup contributor virtualenv
 
-If you would like to contribute to notebooks it is useful to setup a python virtual environment to ensure your environment is consistent with other contributors. This section provides a guide for how to do this in an Ubuntu system (tested on 14.04), other systems should work with slight modifications.
+If you would like to contribute to notebooks it is useful to setup a python virtual environment to ensure your environment is consistent with other contributors. This section provides a guide for how to do this in an Ubuntu system (tested on 14.04 and 16.04), other systems should work with slight modifications.
 
 Currently we are using pip to install packages, the most important package versions are:
 
