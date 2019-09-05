@@ -18,6 +18,7 @@ $ cd fundamentals_of_interferometry
 ```
 
 Inside the project just run make to initialise the virtual environment, download the data and start the notebook:
+```
 $ make
 ```
 
