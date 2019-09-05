@@ -70,3 +70,6 @@ target/
 
 # python notebook checkpoints
 .ipynb_checkpoints
+
+.venv*/
+.virtualenv*/
