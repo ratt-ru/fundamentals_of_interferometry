@@ -9,6 +9,7 @@ $(VENV):
 
 $(VENV)/bin/jupyter-notebook: $(VENV)
 	$(VENV)/bin/pip install -r requirements.txt
+	touch $(VENV)/bin/jupyter-notebook
 
 notebook: $(VENV)/bin/jupyter-notebook pull_data
 	$(VENV)/bin/jupyter-notebook

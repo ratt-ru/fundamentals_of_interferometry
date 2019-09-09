@@ -75,7 +75,6 @@ def sphere(ant1,ant2,A,E,D,L):
     ax.set_xlabel("X (km)")
     ax.set_ylabel("Y (km)")
     ax.set_zlabel("Z (km)")
-    ax.set_aspect("equal")
     plt.tight_layout()
 
 def makecubeplot(u,v,w):
@@ -129,7 +128,6 @@ def UVellipse(u,v,w,a,b,v0):
     e2.set_alpha(0.5)
     ax.plot(u,v,"b")
     ax.plot(-u,-v,"r")
-    ax.hold('on')
 
 # For 4.4.2 UV Coverage Improving your coverage python notebook
 def baseline_to_xyz(lengthbaseline, elevation, azimuth, latitude):
@@ -176,7 +174,7 @@ def track_uv_freq(ha, listfreq,lengthbaseline, elevation, azimuth, latitude, dec
 
 def baseline_angles(antennaPosition,lamb):
     na = len(antennaPosition) #number of antennas
-    nbl = na*(na-1)/2 #number of independent baselines
+    nbl = na*(na-1)//2 #number of independent baselines
     length_angle = np.zeros((nbl, 2))
     k = 0
     for i in range(na):
@@ -197,7 +195,7 @@ def plotuv_freq(antennaPosition,L,dec,h,Nfreqs,lamb0,df):
     B = baseline_angles(antennaPosition,lamb0)
     
     na = len(antennaPosition)
-    nbl = na*(na-1)/2
+    nbl = na*(na-1)//2
     maxuv=0.
     for i in range (nbl):
         uv = track_uv_freq(h, tabfreq,B[i, 0], 0., B[i, 1], L, dec, Nfreqs)/1e3;
@@ -219,7 +217,7 @@ def plotuv(antennaPos,L,dec,h,Ntimes,lamb):
     fig=plt.figure(figsize=(10,10))
     B = baseline_angles(antennaPos,lamb)
     na = len(antennaPos) #number of antennas 
-    nbl = na*(na-1)/2 #number of baselines
+    nbl = na*(na-1)//2 #number of baselines
     maxuv=0.
     for i in range (nbl):
         uv = track_uv(h,B[i, 0], 0., B[i, 1], L, dec, Ntimes)/1e3;
