@@ -87,8 +87,8 @@ def sim_uv(ref_ra, ref_dec,
         plt.plot(-uvw[:, 0] / plot_channel / 1e4,
                  -uvw[:, 1] / plot_channel / 1e4,
                  "b.", label="Conjugate Baselines")
-        plt.xlabel("u ($k\lambda$)")
-        plt.ylabel("v ($k\lambda$)")
+        plt.xlabel(r"u ($k\lambda$)")
+        plt.ylabel(r"v ($k\lambda$)")
         plt.legend(bbox_to_anchor=(1.75, 1.0))
         if same_scales_plot:
             maxval = max(abs(np.max(uvw / plot_channel / 1e4)), abs(np.min(uvw / plot_channel / 1e4)))
