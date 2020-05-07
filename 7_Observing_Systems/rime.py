@@ -21,6 +21,6 @@ vis = rime(uvw, sources, frequencies)
 # Work out visibility dimensions
 ntime, nbl, nchan, _, _ = vis.shape
 
-print vis
-print 'Computed complex visibilities of shape ({t}x{bl}x{ch}x2x2)'.format(
-    t=ntime, bl=nbl, ch=nchan)
+print(vis)
+print('Computed complex visibilities of shape ({t}x{bl}x{ch}x2x2)'
+      .format(t=ntime, bl=nbl, ch=nchan))
