@@ -1,5 +1,6 @@
 import numpy as np
 
+
 def fft_degrid(model_image, uvw, ref_lda, Nx, Ny, convolution_filter):
     """
     Convolutional gridder (continuum)
@@ -17,9 +18,9 @@ def fft_degrid(model_image, uvw, ref_lda, Nx, Ny, convolution_filter):
     """
     assert model_image.ndim == 3
     filter_index = \
-        np.arange(-convolution_filter.half_sup,convolution_filter.half_sup+1)
+        np.arange(-convolution_filter.half_sup, convolution_filter.half_sup + 1)
     model_vis_regular = np.zeros(model_image.shape, dtype=np.complex64)
-    for p in xrange(model_image.shape[0]):
+    for p in range(model_image.shape[0]):
         model_vis_regular[p, :, :] = \
             np.fft.fftshift(np.fft.fft2(np.fft.ifftshift(model_image[p, :, :])))
     vis = \
@@ -28,33 +29,33 @@ def fft_degrid(model_image, uvw, ref_lda, Nx, Ny, convolution_filter):
                   model_image.shape[0]],
                  dtype=np.complex)
 
-    for r in xrange(uvw.shape[0]):
-        for c in xrange(vis.shape[1]):
-            scaled_uv = uvw[r,:] / ref_lda[c]
+    for r in range(uvw.shape[0]):
+        for c in range(vis.shape[1]):
+            scaled_uv = uvw[r, :] / ref_lda[c]
             disc_u = int(np.round(scaled_uv[0]))
             disc_v = int(np.round(scaled_uv[1]))
-            frac_u_offset = int((1 + convolution_filter.half_sup +
-                                 (-scaled_uv[0] + disc_u)) *
-                                convolution_filter.oversample)
-            frac_v_offset = int((1 + convolution_filter.half_sup +
-                                 (-scaled_uv[1] + disc_v)) *
-                                convolution_filter.oversample)
+            frac_u_offset = int((1 + convolution_filter.half_sup
+                                 + (-scaled_uv[0] + disc_u))
+                                * convolution_filter.oversample)
+            frac_v_offset = int((1 + convolution_filter.half_sup
+                                 + (-scaled_uv[1] + disc_v))
+                                * convolution_filter.oversample)
 
-            if (disc_v + Ny // 2 + convolution_filter.half_sup >= Ny or
-                disc_u + Nx // 2 + convolution_filter.half_sup >= Nx or
-                disc_v + Ny // 2 - convolution_filter.half_sup < 0 or
-                disc_u + Nx // 2 - convolution_filter.half_sup < 0):
+            if (disc_v + Ny // 2 + convolution_filter.half_sup >= Ny
+                or disc_u + Nx // 2 + convolution_filter.half_sup >= Nx
+                or disc_v + Ny // 2 - convolution_filter.half_sup < 0
+                or disc_u + Nx // 2 - convolution_filter.half_sup < 0):
                 continue
             for conv_v in filter_index:
                 v_tap = \
-                    convolution_filter.filter_taps[conv_v *
-                                                   convolution_filter.oversample
+                    convolution_filter.filter_taps[conv_v
+                                                   * convolution_filter.oversample
                                                    + frac_v_offset]
                 grid_pos_v = disc_v + conv_v + Ny // 2
                 for conv_u in filter_index:
                     u_tap = \
-                        convolution_filter.filter_taps[conv_u *
-                                                       convolution_filter.oversample
+                        convolution_filter.filter_taps[conv_u
+                                                       * convolution_filter.oversample
                                                        + frac_u_offset]
                     conv_weight = v_tap * u_tap
                     grid_pos_u = disc_u + conv_u + Nx // 2
