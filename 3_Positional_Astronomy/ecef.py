@@ -1,23 +1,23 @@
 """
     A subset of functions taken from:
-    
+
     PySatel - a Python framework for automated processing of scientific data
     acquired from spacecraft instruments.
     Copyright (C) 2010 David Parunakian
-    
+
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
-    
+
     This program is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
-    
+
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
-    
+
     https://code.google.com/p/pysatel/source/browse/trunk/coord.py?r=22
 """
 
@@ -82,7 +82,7 @@ def ecef2geodetic(x, y, z, degrees=True):
     else: return lat, lon, h
 
 if __name__ == '__main__':
-    print 'Running test cases'
+    print('Running test cases')
 
     #known values for Chilbolton Observatory
     chilbolton={'lat': 51.143833512,
@@ -94,13 +94,13 @@ if __name__ == '__main__':
 
     X,Y,Z = geodetic2ecef(chilbolton['lat'], chilbolton['lon'], chilbolton['h'])
     lat,lon,h = ecef2geodetic(chilbolton['x'], chilbolton['y'], chilbolton['z'])
-    print 'Known    (lat,lon,h):', chilbolton['lat'], chilbolton['lon'], chilbolton['h']
-    print 'Computed (lat,lon,h):', lat,lon,h
-    print 'Delta    (lat,lon,h):', np.abs(chilbolton['lat']-lat), np.abs(chilbolton['lon']-lon), np.abs(chilbolton['h']-h)
+    print('Known    (lat,lon,h):', chilbolton['lat'], chilbolton['lon'], chilbolton['h'])
+    print('Computed (lat,lon,h):', lat,lon,h)
+    print('Delta    (lat,lon,h):', np.abs(chilbolton['lat']-lat), np.abs(chilbolton['lon']-lon), np.abs(chilbolton['h']-h))
 
-    print 'Known    (x,y,z):', chilbolton['z'], chilbolton['y'], chilbolton['z']
-    print 'Computed (x,y,z):', X,Y,Z
-    print 'Delta    (x,y,z):', np.abs(chilbolton['x']-X), np.abs(chilbolton['y']-Y), np.abs(chilbolton['z']-Z)
+    print('Known    (x,y,z):', chilbolton['z'], chilbolton['y'], chilbolton['z'])
+    print('Computed (x,y,z):', X,Y,Z)
+    print('Delta    (x,y,z):', np.abs(chilbolton['x']-X), np.abs(chilbolton['y']-Y), np.abs(chilbolton['z']-Z))
 
-    print 'Made it through without any errors.'
+    print('Made it through without any errors.')
 
