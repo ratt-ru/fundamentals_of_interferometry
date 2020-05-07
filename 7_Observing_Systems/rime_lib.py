@@ -10,10 +10,11 @@ sys.path.insert(0, imaging_dir)
 from track_simulator import sim_uv
 
 ALL_SLICE = slice(None, None, 1)
-SRC_SLICE  = (np.newaxis, ALL_SLICE, np.newaxis, np.newaxis, np.newaxis)
+SRC_SLICE = (np.newaxis, ALL_SLICE, np.newaxis, np.newaxis, np.newaxis)
 TIME_SLICE = (np.newaxis, np.newaxis, ALL_SLICE, np.newaxis, np.newaxis)
 ANT_SLICE = (ALL_SLICE, np.newaxis, ALL_SLICE, ALL_SLICE, np.newaxis)
 CHAN_SLICE = (np.newaxis, np.newaxis, np.newaxis, np.newaxis, ALL_SLICE)
+
 
 def ap_index(nsrc=0, ntime=1, na=1, nchan=0):
     """
@@ -39,13 +40,13 @@ def ap_index(nsrc=0, ntime=1, na=1, nchan=0):
     assert T, 'Number of timesteps must be greater than 1'
     assert A, 'Number of antenna must be greater than 1'
 
-    nbl = na*(na+1)/2
+    nbl = na * (na + 1) / 2
 
     # This produces the default antenna pair mapping
     # ANT1: 0000 111 22 3
     # ANT2: 0123 123 23 3
     default_ap = np.tile(np.int32(np.triu_indices(na, 0)), ntime) \
-            .reshape(2, ntime, nbl)
+        .reshape(2, ntime, nbl)
 
     # The index that we're going to return
     idx = []
@@ -54,13 +55,13 @@ def ap_index(nsrc=0, ntime=1, na=1, nchan=0):
     # below (np.arange(...) and default_ap), produce broadcasts
     # when idx is used to index an array
     if S:
-        src_slice  = tuple([s for s, n in zip(SRC_SLICE, needed) if n])
+        src_slice = tuple([s for s, n in zip(SRC_SLICE, needed) if n])
         idx.append(np.arange(nsrc)[src_slice])
 
     time_slice = tuple([t for t, n in zip(TIME_SLICE, needed) if n])
     idx.append(np.arange(ntime)[time_slice])
 
-    ant_slice  = tuple([a for a, n in zip(ANT_SLICE, needed) if n])
+    ant_slice = tuple([a for a, n in zip(ANT_SLICE, needed) if n])
     idx.append(default_ap[ant_slice])
 
     if C:
@@ -68,6 +69,7 @@ def ap_index(nsrc=0, ntime=1, na=1, nchan=0):
         idx.append(np.arange(nchan)[chan_slice])
 
     return idx
+
 
 def brightness(I, Q, U, V):
     """ Create a brightness matrix from the supplied stokes parameters """
@@ -85,12 +87,13 @@ def brightness(I, Q, U, V):
     B = np.empty(shape=(nsrc, 2, 2), dtype=np.complex128)
 
     # Compute the polarisation values
-    B[:,0,0] = I + Q
-    B[:,0,1] = U + V*1j
-    B[:,1,0] = U - V*1j
-    B[:,1,1] = I - Q
+    B[:, 0, 0] = I + Q
+    B[:, 0, 1] = U + V * 1j
+    B[:, 1, 0] = U - V * 1j
+    B[:, 1, 1] = I - Q
 
     return B
+
 
 def lm_2_rad(ra, dec):
     """
@@ -119,20 +122,22 @@ def lm_2_rad(ra, dec):
     # Declination (degrees) to radians
     # Right ascension deltas in radians
     ra_rad = ra * np.pi / 180
-    dec_rad = dec * np.pi / 180    
+    dec_rad = dec * np.pi / 180
     ra_delta_rad = ra - ra[0]
 
     # Create the empty lm array. Compute l and m.
     nsrc = ra.shape[0]
-    lm = np.empty(shape=(nsrc,2), dtype=np.float64)
-    lm[:,0] = np.cos(dec_rad)*np.sin(ra_delta_rad)
-    lm[:,1] = np.sin(dec_rad)*np.cos(dec_rad[0]) - \
-        np.cos(dec_rad)*np.sin(dec_rad[0])*np.sin(ra_delta_rad)
+    lm = np.empty(shape=(nsrc, 2), dtype=np.float64)
+    lm[:, 0] = np.cos(dec_rad) * np.sin(ra_delta_rad)
+    lm[:, 1] = np.sin(dec_rad) * np.cos(dec_rad[0]) - \
+        np.cos(dec_rad) * np.sin(dec_rad[0]) * np.sin(ra_delta_rad)
 
     return lm
 
+
 # Speed of light in metres
 C = 299792458
+
 
 def phase(lm, uvw, frequency):
     """
@@ -166,33 +171,34 @@ def phase(lm, uvw, frequency):
     nchan = frequency.shape[0]
 
     # Reference l and m slices for convenenience and compute n from them
-    l, m = lm[:,0], lm[:,0]
+    l, m = lm[:, 0], lm[:, 0]
     n = np.sqrt(1.0 - l**2 - m**2) - 1.0
 
     assert not np.isnan(n).any(), \
         ("Some values of l and m produce invalid values for n."
-        "Check that 1 - l**2 - m**2 >= 0 holds for all l and m")
+         "Check that 1 - l**2 - m**2 >= 0 holds for all l and m")
 
     # Reference u, v and w for convenience
-    u, v, w = uvw[:,:,0], uvw[:,:,1], uvw[:,:,2]
+    u, v, w = uvw[:, :, 0], uvw[:, :, 1], uvw[:, :, 2]
 
     # Compute phase from outer product of the source and uvw coordinates
-    phase =((np.outer(l, u) + np.outer(m, v) + np.outer(n, w))
-        .reshape(nsrc, ntime, na) )
+    phase = ((np.outer(l, u) + np.outer(m, v) + np.outer(n, w))
+             .reshape(nsrc, ntime, na))
 
     # Now compute and return the complex phase
-    return np.exp(-2*np.pi*1j*phase[:,:,:,np.newaxis]
-        *frequency[np.newaxis,np.newaxis,np.newaxis,:]/C)
+    return np.exp(-2 * np.pi * 1j * phase[:, :, :, np.newaxis]
+                  * frequency[np.newaxis, np.newaxis, np.newaxis, :] / C)
 
 
 def dec_degrees(degree_str):
     """ Convert a coordinate in DD:MM:SS.SS to decimal degrees """
     DECIMAL_DEGREE_DIVISORS = [1, 60, 3600, 216000]
-    
+
     return sum(float(v) / DECIMAL_DEGREE_DIVISORS[i]
-        for i, v in enumerate(degree_str
-            .replace('.', ':')
-            .split(':')))
+               for i, v in enumerate(degree_str
+                                     .replace('.', ':')
+                                     .split(':')))
+
 
 """
 Array location
@@ -220,6 +226,7 @@ KAT7_ants = np.array([
     [-87.988, 75.754, 0.138]
 ], dtype=np.float64)
 
+
 def KAT7_antenna_uvw(ref_ra=60, ref_dec=45):
     """
     Returns the KAT7 antenna UVW coordinates for a given
@@ -229,22 +236,25 @@ def KAT7_antenna_uvw(ref_ra=60, ref_dec=45):
     # ref_ra = 0 to 360
     # ref_dec = 0 to 90
 
-    bl_uvw = sim_uv(ref_ra=ref_ra, ref_dec=ref_dec,
-        observation_length_in_hrs=12, integration_length=3,
-        enu_coords=KAT7_ants, latitude=KAT7_location[1])
+    bl_uvw = sim_uv(ref_ra=ref_ra,
+                    ref_dec=ref_dec,
+                    observation_length_in_hrs=12,
+                    integration_length=3,
+                    enu_coords=KAT7_ants,
+                    latitude=KAT7_location[1])
 
     # Check that we get the correct number of baselines
     # including auto-correlations
-    na = KAT7_ants.shape[0]   
-    nbl = na*(na+1)/2 
-    ntime = bl_uvw.shape[0]//nbl
-    assert bl_uvw.shape == (ntime*nbl, 3)
+    na = KAT7_ants.shape[0]
+    nbl = na * (na + 1) // 2
+    ntime = bl_uvw.shape[0] // nbl
+    assert bl_uvw.shape == (ntime * nbl, 3)
 
     bl_uvw = bl_uvw.reshape(ntime, nbl, 3)
 
     # Take the 0:na slice as our antenna coordinates
     # The na: slice can be derived from antenna coordinates
-    ant_uvw = -bl_uvw[:,0:na,:]
+    ant_uvw = -bl_uvw[:, 0:na, :]
 
     # Sanity check the result. Use per baseline antenna pair mappings
     # to index the result array. This produces
@@ -281,7 +291,7 @@ def rime(ant_uvw, sources, frequencies):
     complex visibilities
     """
     # Derive lm and brightness matrix from the above array
-    # *sources.T passes in transposed columns to the 
+    # *sources.T passes in transposed columns to the
     # l, m, Q, U, V function arguments
     l, m, I, Q, U, V = sources.T
 
@@ -291,16 +301,16 @@ def rime(ant_uvw, sources, frequencies):
 
     # Determine our problem dimensions
     ntime, na, _ = ant_uvw.shape
-    nbl = na*(na+1)//2
+    nbl = na * (na + 1) // 2
     nsrc, _ = lm.shape
     nchan, = frequencies.shape
 
-    print 'RIME Dimensions'
-    print 'nsrc:   %s' % nsrc
-    print 'ntime:  %s' % ntime
-    print 'na:     %s' % na
-    print 'nbl:    %s' % nbl
-    print 'nchan:  %s' % nchan
+    print('RIME Dimensions')
+    print('nsrc:   %s' % nsrc)
+    print('ntime:  %s' % ntime)
+    print('na:     %s' % na)
+    print('nbl:    %s' % nbl)
+    print('nchan:  %s' % nchan)
 
     # Compute per antenna phase term
     K_per_ant = phase(lm, ant_uvw, frequencies)
@@ -312,9 +322,9 @@ def rime(ant_uvw, sources, frequencies):
     K_p, K_q = K_per_bl[0], K_per_bl[1]
 
     # Compute source coherencies
-    X_pqs = (K_p[:,:,:,:,np.newaxis,np.newaxis]*
-        B[:,np.newaxis,np.newaxis,np.newaxis,:]*
-        K_q[:,:,:,:,np.newaxis,np.newaxis])
+    X_pqs = (K_p[:, :, :, :, np.newaxis, np.newaxis]
+             * B[:, np.newaxis, np.newaxis, np.newaxis, :]
+             * K_q[:, :, :, :, np.newaxis, np.newaxis])
     assert X_pqs.shape == (nsrc, ntime, nbl, nchan, 2, 2)
 
     # Sum over source dimension to produce visibilities
@@ -323,4 +333,3 @@ def rime(ant_uvw, sources, frequencies):
 
     # Return visibilities
     return V_pq.reshape(ntime, nbl, nchan, 2, 2)
-
