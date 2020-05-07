@@ -1,8 +1,8 @@
 import numpy as np
 from matplotlib import pyplot as plt
-def sim_uv(ref_ra, ref_dec, 
-           observation_length_in_hrs, 
-           integration_length, 
+def sim_uv(ref_ra, ref_dec,
+           observation_length_in_hrs,
+           integration_length,
            enu_coords,
            latitude,
            plot_on=False,
@@ -10,7 +10,7 @@ def sim_uv(ref_ra, ref_dec,
            plot_channel=299792458.0/1e9):
     """
     Simulates uv coverage given antenna coordintes in the East-North-Up frame
-    
+
     Keyword arguments:
     ref_ra --- Right Ascension of pointing centre (degrees)
     ref_dec --- Declination of pointing centre (degrees)
@@ -33,25 +33,24 @@ def sim_uv(ref_ra, ref_dec,
     l = no_antenna
     k = no_antenna
     uvw = np.empty([row_count,3])
-    
+
     for r in range(0,row_count):
-        timestamp = r / (no_baselines)
+        timestamp = r // (no_baselines)
         baseline_index = r % (no_baselines)
-        increment_antenna_1_coord = (baseline_index / k)
-        
+        increment_antenna_1_coord = (baseline_index // k)
+
         # calculate antenna 1 and antenna 2 ids based on baseline index using some fancy
         # footwork ;). This indexing scheme will enumerate all unique baselines per
         # timestamp.
-        
         l -= (1) * increment_antenna_1_coord
         k += (l) * increment_antenna_1_coord
-        antenna_1 = no_antenna-l
-        antenna_2 = no_antenna + (baseline_index-k)
-        new_timestamp = ((baseline_index+1) / no_baselines)
+        antenna_1 = no_antenna - l
+        antenna_2 = no_antenna + (baseline_index - k)
+        new_timestamp = ((baseline_index+1) // no_baselines)
         k -= (no_baselines-no_antenna) * new_timestamp
         l += (no_antenna-1) * new_timestamp
         #conversion to local altitude elevation angles:
-        be,bn,bu = enu_coords[antenna_1] - enu_coords[antenna_2]
+        be, bn, bu = enu_coords[antenna_1] - enu_coords[antenna_2]
         mag_b = np.sqrt(be**2 + bn**2 + bu**2)
         epsilon = 0.000000000001
         A = np.arctan2(be,(bn + epsilon))
@@ -74,7 +73,7 @@ def sim_uv(ref_ra, ref_dec,
         v = -sin_dec*cos_ra*Lx - sin_dec*sin_ra*Ly + cos_dec*Lz
         w = cos_dec*cos_ra*Lx + cos_dec*sin_ra*Ly + sin_dec*Lz
         uvw[r] = [u,v,w]
-        
+
     if plot_on:
         hrs = int(observation_length_in_hrs)
         mins = int(observation_length_in_hrs * 60 - hrs*60)
