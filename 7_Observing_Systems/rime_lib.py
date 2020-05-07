@@ -40,7 +40,7 @@ def ap_index(nsrc=0, ntime=1, na=1, nchan=0):
     assert T, 'Number of timesteps must be greater than 1'
     assert A, 'Number of antenna must be greater than 1'
 
-    nbl = na * (na + 1) / 2
+    nbl = na * (na + 1) // 2
 
     # This produces the default antenna pair mapping
     # ANT1: 0000 111 22 3
