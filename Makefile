@@ -12,7 +12,7 @@ $(VENV)/bin/jupyter-notebook: $(VENV)
 	touch $(VENV)/bin/jupyter-notebook
 
 notebook: $(VENV)/bin/jupyter-notebook pull_data
-	$(VENV)/bin/jupyter-notebook
+	$(VENV)/bin/jupyter-notebook --no-browser --ip 0.0.0.0
 
 docker:
 	docker build -t ratt-ru/fundamentals_of_interferometry .
