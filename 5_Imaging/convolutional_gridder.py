@@ -25,8 +25,8 @@ def grid_ifft(vis, uvw, ref_lda, Nx, Ny, convolution_filter):
     # Hogbom CLEAN for details), one grid for the sampling function:
     sampling_regular = \
         np.zeros([2*Ny,2*Nx],dtype=np.complex)
-    for r in xrange(uvw.shape[0]):
-        for c in xrange(vis.shape[1]):
+    for r in range(uvw.shape[0]):
+        for c in range(vis.shape[1]):
             scaled_uv = uvw[r,:] / ref_lda[c]
             disc_u = int(np.round(scaled_uv[0]))
             disc_v = int(np.round(scaled_uv[1]))

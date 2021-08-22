@@ -208,7 +208,7 @@ def plotuv_freq(antennaPosition,L,dec,h,Nfreqs,lamb0,df):
     plt.title('uv coverage')
     mb = maxuv*1.1 #5*np.sqrt((uv**2).sum(1)).max()
     uv.shape
-    plt.axes().set_aspect('equal')
+#     plt.axes().set_aspect('equal')
     plt.xlim(-mb,mb)
     plt.ylim(-mb,mb)
 
@@ -228,7 +228,7 @@ def plotuv(antennaPos,L,dec,h,Ntimes,lamb):
     plt.ylabel('v (klambda)')
     plt.title('uv coverage')
     mb = maxuv*1.1 #5*np.sqrt((uv**2).sum(1)).max()
-    plt.axes().set_aspect('equal')
+#     plt.axes().set_aspect('equal')
     plt.xlim(-mb,mb)
     plt.ylim(-mb,mb)
     #plt.show()

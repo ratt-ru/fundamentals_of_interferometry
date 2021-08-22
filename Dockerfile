@@ -3,6 +3,7 @@ LABEL maintainer=gijs@pythonic.nl
 RUN docker-apt-install git
 RUN echo "Test this stuff"
 RUN docker-apt-install python3 python3-virtualenv
+RUN docker-apt-install cm-super dvipng
 ARG NB_USER=rattru
 ARG NB_UID=1000
 ENV USER ${NB_USER}
