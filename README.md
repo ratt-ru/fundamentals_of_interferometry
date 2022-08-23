@@ -24,7 +24,8 @@ $ make
 
 ## Data Files
 
-There are additional large files (> 1MB), mainly FITS images, which are needed for some of the sections, these can be downloaded [here](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/data/fundamentals_fits.tar.gz) ([alt](https://www.dropbox.com/s/n3jyiajytwuldpu/fundamentals_fits.tar.gz?dl=0)), the original simulated KAT-7 measurement sets can be downloaded [here](http://www.mth.uct.ac.za/~siphelo/admin/interferometry/data/simulated_KAT-7_ms.tar.gz) ([alt](https://www.dropbox.com/s/kb3p2mthei8dgl9/simulated_KAT-7_ms.tar.gz?dl=0)). These are tarballs which should be extracted in the data directory.
+There are additional large files (> 1MB), mainly FITS images, which are needed for some of the sections, these can be downloaded 
+[here](https://www.dropbox.com/sh/7qd3ny9ovt68zqk/AABi48QdW-x5e3vZeKGFN2Y1a?dl=0). The original simulated KAT-7 measurement sets can be downloaded from the same directory. These are tarballs which should be extracted in the data directory.
 
 ```
 cd fundamentals_of_interferometry/data/
