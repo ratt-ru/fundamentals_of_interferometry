@@ -37,7 +37,7 @@ def sim_uv(ref_ra, ref_dec,
     for r in range(0,row_count):
         timestamp = r / (no_baselines)
         baseline_index = r % (no_baselines)
-        increment_antenna_1_coord = (baseline_index / k)
+        increment_antenna_1_coord = (baseline_index // k)
         
         # calculate antenna 1 and antenna 2 ids based on baseline index using some fancy
         # footwork ;). This indexing scheme will enumerate all unique baselines per
@@ -47,7 +47,7 @@ def sim_uv(ref_ra, ref_dec,
         k += (l) * increment_antenna_1_coord
         antenna_1 = no_antenna-l
         antenna_2 = no_antenna + (baseline_index-k)
-        new_timestamp = ((baseline_index+1) / no_baselines)
+        new_timestamp = ((baseline_index+1) // no_baselines)
         k -= (no_baselines-no_antenna) * new_timestamp
         l += (no_antenna-1) * new_timestamp
         #conversion to local altitude elevation angles:
