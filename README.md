@@ -1,5 +1,7 @@
 # Fundamentals of Radio Interferometry
 
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ratt-ru/fundamentals_of_interferometry/master)
+
 An ipython notebook-based book on the Fundamentals of Radio Interferometry. This is a community effort with the aim to be constantly improving and adding to the content in an effort to make interferometry as accessible as possible.  Please contribute, whether it is content, editing, or even suggestions.
 
 This book is currently being used to teach the NASSP [Fundamentals of Radio Interferometry](https://ratt-ru.github.io/fundamentals_of_interferometry/) Masters' Course.
